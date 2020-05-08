@@ -45,6 +45,8 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 /**
@@ -516,18 +518,24 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
         }
 
         // Gets the current system time in milliseconds
-        Long now = Long.valueOf(System.currentTimeMillis());
+        //Long now = Long.valueOf(System.currentTimeMillis());//现在的时间
+        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dateStr = dateformat.format(System.currentTimeMillis());
+       // Date date = new Date(now);
+       // SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");//时间格式的转换
+       // String dateTime = format.format(date);
 
         // If the values map doesn't contain the creation date, sets the value to the current time.
         if (values.containsKey(NotePad.Notes.COLUMN_NAME_CREATE_DATE) == false) {
-            values.put(NotePad.Notes.COLUMN_NAME_CREATE_DATE, now);
-        }
+            values.put(NotePad.Notes.COLUMN_NAME_CREATE_DATE,dateStr);
+        }//写入创建时间
 
         // If the values map doesn't contain the modification date, sets the value to the current
         // time.
         if (values.containsKey(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE) == false) {
-            values.put(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, now);
-        }
+            values.put(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE,dateStr);
+            System.out.print(dateStr);
+        }//写入修改时间
 
         // If the values map doesn't contain a title, sets the value to the default title.
         if (values.containsKey(NotePad.Notes.COLUMN_NAME_TITLE) == false) {

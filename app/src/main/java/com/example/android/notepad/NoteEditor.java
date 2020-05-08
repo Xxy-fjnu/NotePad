@@ -38,6 +38,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
 
+import java.text.SimpleDateFormat;
+
 /**
  * This Activity handles "editing" a note, where editing is responding to
  * {@link Intent#ACTION_VIEW} (request to view data), edit a note
@@ -524,8 +526,10 @@ public class NoteEditor extends Activity {
     private final void updateNote(String text, String title) {
 
         // Sets up a map to contain values to be updated in the provider.
+        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dateStr = dateformat.format(System.currentTimeMillis());//时间日期的转换
         ContentValues values = new ContentValues();
-        values.put(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, System.currentTimeMillis());
+        values.put(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, dateStr);
 
         // If the action is to insert a new note, this creates an initial title for it.
         if (mState == STATE_INSERT) {

@@ -143,12 +143,12 @@ public final class NotePad {
          * Column name for the creation timestamp
          * <P>Type: INTEGER (long from System.curentTimeMillis())</P>
          */
-        public static final String COLUMN_NAME_CREATE_DATE = "created";
+        public static final String COLUMN_NAME_CREATE_DATE = "created";//创建的日期
 
         /**
          * Column name for the modification timestamp
          * <P>Type: INTEGER (long from System.curentTimeMillis())</P>
          */
-        public static final String COLUMN_NAME_MODIFICATION_DATE = "modified";
+        public static final String COLUMN_NAME_MODIFICATION_DATE = "modified";//修改的日期
     }
 }
