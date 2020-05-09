@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\AntroidStudio\work\NotePad\app\src\main\AndroidManifest.xml:22:1-120:12
+ADDED from D:\AntroidStudio\work\NotePad\app\src\main\AndroidManifest.xml:22:1-124:12
 	package
 		ADDED from D:\AntroidStudio\work\NotePad\app\src\main\AndroidManifest.xml:23:5-42
 		INJECTED from D:\AntroidStudio\work\NotePad\app\src\main\AndroidManifest.xml
@@ -17,7 +17,7 @@ ADDED from D:\AntroidStudio\work\NotePad\app\src\main\AndroidManifest.xml:25:5-4
 		INJECTED from D:\AntroidStudio\work\NotePad\app\src\main\AndroidManifest.xml
 		INJECTED from D:\AntroidStudio\work\NotePad\app\src\main\AndroidManifest.xml
 application
-ADDED from D:\AntroidStudio\work\NotePad\app\src\main\AndroidManifest.xml:27:5-118:19
+ADDED from D:\AntroidStudio\work\NotePad\app\src\main\AndroidManifest.xml:27:5-122:19
 	android:label
 		ADDED from D:\AntroidStudio\work\NotePad\app\src\main\AndroidManifest.xml:28:9-41
 	android:icon
@@ -148,3 +148,9 @@ action#android.intent.action.CREATE_LIVE_FOLDER
 ADDED from D:\AntroidStudio\work\NotePad\app\src\main\AndroidManifest.xml:113:17-83
 	android:name
 		ADDED from D:\AntroidStudio\work\NotePad\app\src\main\AndroidManifest.xml:113:25-80
+activity#com.example.android.notepad.NoteSearch
+ADDED from D:\AntroidStudio\work\NotePad\app\src\main\AndroidManifest.xml:117:9-120:20
+	android:label
+		ADDED from D:\AntroidStudio\work\NotePad\app\src\main\AndroidManifest.xml:119:13-55
+	android:name
+		ADDED from D:\AntroidStudio\work\NotePad\app\src\main\AndroidManifest.xml:118:13-38

@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\layout\\note_search.xml",
+        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\layout\\note_search.xml"
+    },
+    {
         "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\layout\\note_editor.xml",
         "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\layout\\note_editor.xml"
     },

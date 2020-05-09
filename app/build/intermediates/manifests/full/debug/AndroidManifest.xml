@@ -145,6 +145,10 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.android.notepad.NoteSearch"
+            android:label="@string/title_notes_search" >
+        </activity>
     </application>
 
 </manifest>
