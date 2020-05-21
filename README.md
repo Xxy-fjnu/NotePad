@@ -204,11 +204,11 @@ case R.id.menu_search:
 
 <img src="https://github.com/Xxy-fjnu/Android_lab/blob/master/screenshots/NotePad_middle/2.png" width = "350px">
 
-点击提交按钮后返回查到的笔记数量
+点击提交按钮后返回查到的笔记数量并隐藏输入键盘
 
 <img src="https://github.com/Xxy-fjnu/Android_lab/blob/master/screenshots/NotePad_middle/3.png" width = "350px">
 
-查询无结果时显示提示信息
+查询无结果时显示提示信息并隐藏输入键盘
 
 <img src="https://github.com/Xxy-fjnu/Android_lab/blob/master/screenshots/NotePad_middle/4.png" width = "350px">
 
