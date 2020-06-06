@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="Blue">#BAD7F7</color>
+    <color name="Green">#ECFAEB</color>
+    <color name="Pink">#FFEEF0</color>
+    <color name="White">#FFFFFF</color>
+    <color name="Yellow">#FFFAE3</color>
     <string name="app_name">NotePad</string>
     <string name="button_ok">OK</string>
     <string name="error_message">Error loading note</string>
@@ -7,6 +12,7 @@
     <string name="hint">please enter the note title</string>
     <string name="live_folder_name">Notes</string>
     <string name="menu_add">New note</string>
+    <string name="menu_bgcolor">bgcolor</string>
     <string name="menu_copy">Copy</string>
     <string name="menu_delete">Delete</string>
     <string name="menu_open">Open</string>

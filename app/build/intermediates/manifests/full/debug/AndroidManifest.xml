@@ -40,7 +40,8 @@
 
         <activity
             android:name="com.example.android.notepad.NotesList"
-            android:label="@string/title_notes_list" >
+            android:label="@string/title_notes_list"
+            android:theme="@android:style/Theme.Holo.Light" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -147,8 +148,14 @@
         </activity>
         <activity
             android:name="com.example.android.notepad.NoteSearch"
-            android:label="@string/title_notes_search" >
-        </activity>
+            android:label="@string/title_notes_search"
+            android:theme="@android:style/Theme.Holo.Light" />
+        <activity
+            android:name="com.example.android.notepad.NoteColor"
+            android:label="Select Background Color or Pic"
+            android:theme="@android:style/Theme.Holo.Light.Dialog"
+            android:windowSoftInputMode="stateHidden" /> <!-- 隐藏键盘 -->
+
     </application>
 
 </manifest>

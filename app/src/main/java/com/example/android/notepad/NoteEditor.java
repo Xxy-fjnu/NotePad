@@ -27,6 +27,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.net.Uri;
@@ -36,6 +37,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import java.text.SimpleDateFormat;
@@ -45,7 +47,7 @@ import java.text.SimpleDateFormat;
  * {@link Intent#ACTION_VIEW} (request to view data), edit a note
  * {@link Intent#ACTION_EDIT}, create a note {@link Intent#ACTION_INSERT}, or
  * create a new note from the current contents of the clipboard {@link Intent#ACTION_PASTE}.
- *
+ * <p>
  * NOTE: Notice that the provider operations in this Activity are taking place on the UI thread.
  * This is not a good practice. It is only done here to make the code more readable. A real
  * application should use the {@link android.content.AsyncQueryHandler}
@@ -59,11 +61,12 @@ public class NoteEditor extends Activity {
      * Creates a projection that returns the note ID and the note contents.
      */
     private static final String[] PROJECTION =
-        new String[] {
-            NotePad.Notes._ID,
-            NotePad.Notes.COLUMN_NAME_TITLE,
-            NotePad.Notes.COLUMN_NAME_NOTE
-    };
+            new String[]{
+                    NotePad.Notes._ID,
+                    NotePad.Notes.COLUMN_NAME_TITLE,
+                    NotePad.Notes.COLUMN_NAME_NOTE,
+                    NotePad.Notes.COLUMN_NAME_BACK_COLOR//添加背景颜色
+            };
 
     // A label for the saved state of the activity
     private static final String ORIGINAL_CONTENT = "origContent";
@@ -100,6 +103,7 @@ public class NoteEditor extends Activity {
 
         /**
          * This is called to draw the LinedEditText object
+         *
          * @param canvas The canvas on which the background is drawn.
          */
         @Override
@@ -140,7 +144,6 @@ public class NoteEditor extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         /*
          * Creates an Intent to use when the Activity object's result is sent back to the
          * caller.
@@ -150,7 +153,6 @@ public class NoteEditor extends Activity {
         /*
          *  Sets up for the edit, based on the action specified for the incoming Intent.
          */
-
         // Gets the action that triggered the intent filter for this Activity
         final String action = intent.getAction();
 
@@ -189,7 +191,7 @@ public class NoteEditor extends Activity {
             // set the result to be returned.
             setResult(RESULT_OK, (new Intent()).setAction(mUri.toString()));
 
-        // If the action was other than EDIT or INSERT:
+            // If the action was other than EDIT or INSERT:
         } else {
 
             // Logs an error that the action was not understood, finishes the Activity, and
@@ -208,11 +210,11 @@ public class NoteEditor extends Activity {
          * android.content.AsyncQueryHandler or android.os.AsyncTask.
          */
         mCursor = managedQuery(
-            mUri,         // The URI that gets multiple notes from the provider.
-            PROJECTION,   // A projection that returns the note ID and note content for each note.
-            null,         // No "where" clause selection criteria.
-            null,         // No "where" clause selection values.
-            null          // Use the default sort order (modification date, descending)
+                mUri,         // The URI that gets multiple notes from the provider.
+                PROJECTION,   // A projection that returns the note ID and note content for each note.
+                null,         // No "where" clause selection criteria.
+                null,         // No "where" clause selection values.
+                null          // Use the default sort order (modification date, descending)
         );
 
         // For a paste, initializes the data from clipboard.
@@ -242,7 +244,7 @@ public class NoteEditor extends Activity {
     /**
      * This method is called when the Activity is about to come to the foreground. This happens
      * when the Activity comes to the top of the task stack, OR when it is first starting.
-     *
+     * <p>
      * Moves to the first note in the list, sets an appropriate title for the action chosen by
      * the user, puts the note contents into the TextView, and saves the original text as a
      * backup.
@@ -274,7 +276,7 @@ public class NoteEditor extends Activity {
                 Resources res = getResources();
                 String text = String.format(res.getString(R.string.title_edit), title);
                 setTitle(text);
-            // Sets the title to "create" for inserts
+                // Sets the title to "create" for inserts
             } else if (mState == STATE_INSERT) {
                 setTitle(getText(R.string.title_create));
             }
@@ -305,13 +307,49 @@ public class NoteEditor extends Activity {
             setTitle(getText(R.string.error_title));
             mText.setText(getText(R.string.error_message));
         }
+        int x = mCursor.getInt(mCursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_BACK_COLOR));//读出数据库中的背景颜色
+        switch (x) {
+            case NotePad.Notes.DEFAULT_COLOR:
+                mText.setBackgroundColor(Color.rgb(255, 255, 255));//白色
+                break;
+            case NotePad.Notes.YELLOW_COLOR:
+                mText.setBackgroundColor(Color.rgb(255, 250, 227));//黄色
+                break;
+            case NotePad.Notes.BLUE_COLOR:
+                mText.setBackgroundColor(Color.rgb(186, 215, 247));//蓝色
+                break;
+            case NotePad.Notes.GREEN_COLOR:
+                mText.setBackgroundColor(Color.rgb(236, 250, 235));//绿色
+                break;
+            case NotePad.Notes.PINK_COLOR:
+                mText.setBackgroundColor(Color.rgb(255, 238, 240));//粉色
+                break;
+            case NotePad.Notes.PIC1:
+                mText.setBackgroundResource(R.drawable.pic1);//图片1
+                break;
+            case NotePad.Notes.PIC2:
+                mText.setBackgroundResource(R.drawable.pic2);//图片2
+                break;
+            case NotePad.Notes.PIC3:
+                mText.setBackgroundResource(R.drawable.pic3);//图片3
+                break;
+            case NotePad.Notes.PIC4:
+                mText.setBackgroundResource(R.drawable.pic4);//图片4
+                break;
+            case NotePad.Notes.PIC5:
+                mText.setBackgroundResource(R.drawable.pic5);//图片2
+                break;
+            default:
+                mText.setBackgroundColor(Color.rgb(255, 255, 255));//白色
+                break;
+        }
     }
 
     /**
      * This method is called when an Activity loses focus during its normal operation, and is then
      * later on killed. The Activity has a chance to save its state so that the system can restore
      * it.
-     *
+     * <p>
      * Notice that this method isn't a normal part of the Activity lifecycle. It won't be called
      * if the user simply navigates away from the Activity.
      */
@@ -324,13 +362,13 @@ public class NoteEditor extends Activity {
 
     /**
      * This method is called when the Activity loses focus.
-     *
+     * <p>
      * For Activity objects that edit information, onPause() may be the one place where changes are
      * saved. The Android application model is predicated on the idea that "save" and "exit" aren't
      * required actions. When users navigate away from an Activity, they shouldn't have to go back
      * to it to complete their work. The act of going away should save everything and leave the
      * Activity in a state where Android can destroy it if necessary.
-     *
+     * <p>
      * If the user hasn't done anything, then this deletes or clears out the note, otherwise it
      * writes the user's work to the provider.
      */
@@ -372,14 +410,14 @@ public class NoteEditor extends Activity {
             } else if (mState == STATE_INSERT) {
                 updateNote(text, text);
                 mState = STATE_EDIT;
-          }
+            }
         }
     }
 
     /**
      * This method is called when the user clicks the device's Menu button the first time for
      * this Activity. Android passes in a Menu object that is populated with items.
-     *
+     * <p>
      * Builds the menus for editing and inserting, and adds in alternative actions that
      * registered themselves to handle the MIME types for this application.
      *
@@ -435,23 +473,27 @@ public class NoteEditor extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle all of the possible menu actions.
         switch (item.getItemId()) {
-        case R.id.menu_save:
-            String text = mText.getText().toString();
-            updateNote(text, null);
-            finish();
-            break;
-        case R.id.menu_delete:
-            deleteNote();
-            finish();
-            break;
-        case R.id.menu_revert:
-            cancelNote();
-            break;
+            case R.id.menu_save:
+                String text = mText.getText().toString();
+                updateNote(text, null);
+                finish();
+                break;
+            case R.id.menu_delete:
+                deleteNote();
+                finish();
+                break;
+            case R.id.menu_revert:
+                cancelNote();
+                break;
+            case R.id.menu_color://修改背景颜色
+                changeColor();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
 
 //BEGIN_INCLUDE(paste)
+
     /**
      * A helper method that replaces the note's data with the contents of the clipboard.
      */
@@ -468,8 +510,8 @@ public class NoteEditor extends Activity {
         ClipData clip = clipboard.getPrimaryClip();
         if (clip != null) {
 
-            String text=null;
-            String title=null;
+            String text = null;
+            String title = null;
 
             // Gets the first item from the clipboard data
             ClipData.Item item = clip.getItemAt(0);
@@ -520,7 +562,8 @@ public class NoteEditor extends Activity {
 
     /**
      * Replaces the current note contents with the text and title provided as arguments.
-     * @param text The new note contents to use.
+     *
+     * @param text  The new note contents to use.
      * @param title The new note title to use
      */
     private final void updateNote(String text, String title) {
@@ -536,14 +579,14 @@ public class NoteEditor extends Activity {
 
             // If no title was provided as an argument, create one from the note text.
             if (title == null) {
-  
+
                 // Get the note's length
                 int length = text.length();
 
                 // Sets the title by getting a substring of the text that is 31 characters long
                 // or the number of characters in the note plus one, whichever is smaller.
                 title = text.substring(0, Math.min(30, length));
-  
+
                 // If the resulting length is more than 30 characters, chops off any
                 // trailing spaces
                 if (length > 30) {
@@ -579,7 +622,7 @@ public class NoteEditor extends Activity {
                 values,  // The map of column names and new values to apply to them.
                 null,    // No selection criteria are used, so no where columns are necessary.
                 null     // No where columns are used, so no where arguments are necessary.
-            );
+        );
 
 
     }
@@ -616,5 +659,11 @@ public class NoteEditor extends Activity {
             getContentResolver().delete(mUri, null, null);
             mText.setText("");
         }
+    }
+
+    private final void changeColor() {//改变颜色
+        Intent intent = new Intent(null,mUri);
+        intent.setClass(NoteEditor.this,NoteColor.class);
+        NoteEditor.this.startActivity(intent);
     }
 }
