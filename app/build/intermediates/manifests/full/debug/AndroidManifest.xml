@@ -159,11 +159,6 @@
             android:label="Select Background Color or Pic"
             android:theme="@android:style/Theme.Holo.Light.Dialog"
             android:windowSoftInputMode="stateHidden" /> <!-- 隐藏键盘 -->
-        <activity
-            android:name="com.example.android.notepad.NoteExport"
-            android:label="@string/export_name"
-            android:theme="@android:style/Theme.Holo.Dialog"
-            android:windowSoftInputMode="stateVisible" />
     </application>
 
 </manifest>

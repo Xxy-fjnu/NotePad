@@ -161,6 +161,7 @@ public class TitleEditor extends Activity {
         }
     }
 
+
     public void onClickOk(View v) {
         finish();
     }

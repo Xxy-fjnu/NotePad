@@ -38,7 +38,8 @@ public final class NotePad {
     public static final class Notes implements BaseColumns {
 
         // This class cannot be instantiated
-        private Notes() {}
+        private Notes() {
+        }
 
         /**
          * The table name offered by this provider
@@ -81,27 +82,27 @@ public final class NotePad {
         /**
          * The content:// style URL for this table
          */
-        public static final Uri CONTENT_URI =  Uri.parse(SCHEME + AUTHORITY + PATH_NOTES);
+        public static final Uri CONTENT_URI = Uri.parse(SCHEME + AUTHORITY + PATH_NOTES);
 
         /**
          * The content URI base for a single note. Callers must
          * append a numeric note id to this Uri to retrieve a note
          */
         public static final Uri CONTENT_ID_URI_BASE
-            = Uri.parse(SCHEME + AUTHORITY + PATH_NOTE_ID);
+                = Uri.parse(SCHEME + AUTHORITY + PATH_NOTE_ID);
 
         /**
          * The content URI match pattern for a single note, specified by its ID. Use this to match
          * incoming URIs or to construct an Intent.
          */
         public static final Uri CONTENT_ID_URI_PATTERN
-            = Uri.parse(SCHEME + AUTHORITY + PATH_NOTE_ID + "/#");
+                = Uri.parse(SCHEME + AUTHORITY + PATH_NOTE_ID + "/#");
 
         /**
          * The content Uri pattern for a notes listing for live folders
          */
         public static final Uri LIVE_FOLDER_URI
-            = Uri.parse(SCHEME + AUTHORITY + PATH_LIVE_FOLDER);
+                = Uri.parse(SCHEME + AUTHORITY + PATH_LIVE_FOLDER);
 
         /*
          * MIME type definitions
@@ -150,5 +151,27 @@ public final class NotePad {
          * <P>Type: INTEGER (long from System.curentTimeMillis())</P>
          */
         public static final String COLUMN_NAME_MODIFICATION_DATE = "modified";//修改的日期
+
+        public static final String COLUMN_NAME_BACK_COLOR = "color";//背景颜色
+
+        public static final int DEFAULT_COLOR = 0; //白
+
+        public static final int YELLOW_COLOR = 1; //黄
+
+        public static final int BLUE_COLOR = 2; //蓝
+
+        public static final int GREEN_COLOR = 3; //绿
+
+        public static final int PINK_COLOR = 4; //粉
+
+        public static final int PIC1 = 5;//图片一
+
+        public static final int PIC2 = 6;//图片二
+
+        public static final int PIC3 = 7;//图片三
+
+        public static final int PIC4 = 8;//图片四
+
+        public static final int PIC5 = 9;//图片五
     }
 }
