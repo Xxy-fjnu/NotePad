@@ -34,9 +34,9 @@
     <string name="menu_export">export</string>
 
     <string name="button_ok">OK</string>
-    <string name="button_export">export</string>
     <string name="text_title">Title:</string>
-    <string name="export_name">export</string>
+    <string name="export_name">export title</string>
+    <string name="button_return">return</string>
 
 
     <string name="resolve_edit">Edit note</string>

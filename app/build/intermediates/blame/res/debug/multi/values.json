@@ -121,27 +121,8 @@
                     "startLine": 8,
                     "startColumn": 4,
                     "startOffset": 299,
-                    "endColumn": 48,
-                    "endOffset": 343
-                },
-                "from": {
-                    "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
-                    "position": {
-                        "startLine": 36,
-                        "startColumn": 4,
-                        "startOffset": 1493,
-                        "endColumn": 48,
-                        "endOffset": 1537
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 348,
                     "endColumn": 40,
-                    "endOffset": 384
+                    "endOffset": 335
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
@@ -151,6 +132,25 @@
                         "startOffset": 1451,
                         "endColumn": 40,
                         "endOffset": 1487
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 340,
+                    "endColumn": 48,
+                    "endOffset": 384
+                },
+                "from": {
+                    "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 38,
+                        "startColumn": 4,
+                        "startOffset": 1594,
+                        "endColumn": 48,
+                        "endOffset": 1638
                     }
                 }
             },
@@ -167,9 +167,9 @@
                     "position": {
                         "startLine": 45,
                         "startColumn": 4,
-                        "startOffset": 1797,
+                        "startOffset": 1803,
                         "endColumn": 60,
-                        "endOffset": 1853
+                        "endOffset": 1859
                     }
                 }
             },
@@ -186,9 +186,9 @@
                     "position": {
                         "startLine": 44,
                         "startColumn": 4,
-                        "startOffset": 1750,
+                        "startOffset": 1756,
                         "endColumn": 45,
-                        "endOffset": 1791
+                        "endOffset": 1797
                     }
                 }
             },
@@ -197,17 +197,17 @@
                     "startLine": 12,
                     "startColumn": 4,
                     "startOffset": 496,
-                    "endColumn": 46,
-                    "endOffset": 538
+                    "endColumn": 52,
+                    "endOffset": 544
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 38,
+                        "startLine": 37,
                         "startColumn": 4,
-                        "startOffset": 1590,
-                        "endColumn": 46,
-                        "endOffset": 1632
+                        "startOffset": 1540,
+                        "endColumn": 52,
+                        "endOffset": 1588
                     }
                 }
             },
@@ -215,18 +215,18 @@
                 "to": {
                     "startLine": 13,
                     "startColumn": 4,
-                    "startOffset": 543,
+                    "startOffset": 549,
                     "endColumn": 60,
-                    "endOffset": 599
+                    "endOffset": 605
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 47,
                         "startColumn": 4,
-                        "startOffset": 1929,
+                        "startOffset": 1935,
                         "endColumn": 60,
-                        "endOffset": 1985
+                        "endOffset": 1991
                     }
                 }
             },
@@ -234,9 +234,9 @@
                 "to": {
                     "startLine": 14,
                     "startColumn": 4,
-                    "startOffset": 604,
+                    "startOffset": 610,
                     "endColumn": 50,
-                    "endOffset": 650
+                    "endOffset": 656
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
@@ -253,9 +253,9 @@
                 "to": {
                     "startLine": 15,
                     "startColumn": 4,
-                    "startOffset": 655,
+                    "startOffset": 661,
                     "endColumn": 45,
-                    "endOffset": 696
+                    "endOffset": 702
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
@@ -272,9 +272,9 @@
                 "to": {
                     "startLine": 16,
                     "startColumn": 4,
-                    "startOffset": 701,
+                    "startOffset": 707,
                     "endColumn": 48,
-                    "endOffset": 745
+                    "endOffset": 751
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
@@ -291,9 +291,9 @@
                 "to": {
                     "startLine": 17,
                     "startColumn": 4,
-                    "startOffset": 750,
+                    "startOffset": 756,
                     "endColumn": 42,
-                    "endOffset": 788
+                    "endOffset": 794
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
@@ -310,9 +310,9 @@
                 "to": {
                     "startLine": 18,
                     "startColumn": 4,
-                    "startOffset": 793,
+                    "startOffset": 799,
                     "endColumn": 46,
-                    "endOffset": 835
+                    "endOffset": 841
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
@@ -329,9 +329,9 @@
                 "to": {
                     "startLine": 19,
                     "startColumn": 4,
-                    "startOffset": 840,
+                    "startOffset": 846,
                     "endColumn": 46,
-                    "endOffset": 882
+                    "endOffset": 888
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
@@ -348,9 +348,9 @@
                 "to": {
                     "startLine": 20,
                     "startColumn": 4,
-                    "startOffset": 887,
+                    "startOffset": 893,
                     "endColumn": 42,
-                    "endOffset": 925
+                    "endOffset": 931
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
@@ -367,9 +367,9 @@
                 "to": {
                     "startLine": 21,
                     "startColumn": 4,
-                    "startOffset": 930,
+                    "startOffset": 936,
                     "endColumn": 44,
-                    "endOffset": 970
+                    "endOffset": 976
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
@@ -386,9 +386,9 @@
                 "to": {
                     "startLine": 22,
                     "startColumn": 4,
-                    "startOffset": 975,
+                    "startOffset": 981,
                     "endColumn": 54,
-                    "endOffset": 1025
+                    "endOffset": 1031
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
@@ -405,9 +405,9 @@
                 "to": {
                     "startLine": 23,
                     "startColumn": 4,
-                    "startOffset": 1030,
+                    "startOffset": 1036,
                     "endColumn": 42,
-                    "endOffset": 1068
+                    "endOffset": 1074
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
@@ -424,18 +424,18 @@
                 "to": {
                     "startLine": 24,
                     "startColumn": 4,
-                    "startOffset": 1073,
+                    "startOffset": 1079,
                     "endColumn": 68,
-                    "endOffset": 1137
+                    "endOffset": 1143
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 46,
                         "startColumn": 4,
-                        "startOffset": 1859,
+                        "startOffset": 1865,
                         "endColumn": 68,
-                        "endOffset": 1923
+                        "endOffset": 1929
                     }
                 }
             },
@@ -443,18 +443,18 @@
                 "to": {
                     "startLine": 25,
                     "startColumn": 4,
-                    "startOffset": 1142,
+                    "startOffset": 1148,
                     "endColumn": 50,
-                    "endOffset": 1188
+                    "endOffset": 1194
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 41,
                         "startColumn": 4,
-                        "startOffset": 1642,
+                        "startOffset": 1648,
                         "endColumn": 50,
-                        "endOffset": 1688
+                        "endOffset": 1694
                     }
                 }
             },
@@ -462,18 +462,18 @@
                 "to": {
                     "startLine": 26,
                     "startColumn": 4,
-                    "startOffset": 1193,
+                    "startOffset": 1199,
                     "endColumn": 52,
-                    "endOffset": 1241
+                    "endOffset": 1247
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 42,
                         "startColumn": 4,
-                        "startOffset": 1694,
+                        "startOffset": 1700,
                         "endColumn": 52,
-                        "endOffset": 1742
+                        "endOffset": 1748
                     }
                 }
             },
@@ -481,18 +481,18 @@
                 "to": {
                     "startLine": 27,
                     "startColumn": 4,
-                    "startOffset": 1246,
+                    "startOffset": 1252,
                     "endColumn": 45,
-                    "endOffset": 1287
+                    "endOffset": 1293
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 37,
+                        "startLine": 36,
                         "startColumn": 4,
-                        "startOffset": 1543,
+                        "startOffset": 1493,
                         "endColumn": 45,
-                        "endOffset": 1584
+                        "endOffset": 1534
                     }
                 }
             },
@@ -500,9 +500,9 @@
                 "to": {
                     "startLine": 28,
                     "startColumn": 4,
-                    "startOffset": 1292,
+                    "startOffset": 1298,
                     "endColumn": 49,
-                    "endOffset": 1337
+                    "endOffset": 1343
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
@@ -519,9 +519,9 @@
                 "to": {
                     "startLine": 29,
                     "startColumn": 4,
-                    "startOffset": 1342,
+                    "startOffset": 1348,
                     "endColumn": 49,
-                    "endOffset": 1387
+                    "endOffset": 1393
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
@@ -538,9 +538,9 @@
                 "to": {
                     "startLine": 30,
                     "startColumn": 4,
-                    "startOffset": 1392,
+                    "startOffset": 1398,
                     "endColumn": 56,
-                    "endOffset": 1444
+                    "endOffset": 1450
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
@@ -557,9 +557,9 @@
                 "to": {
                     "startLine": 31,
                     "startColumn": 4,
-                    "startOffset": 1449,
+                    "startOffset": 1455,
                     "endColumn": 50,
-                    "endOffset": 1495
+                    "endOffset": 1501
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
@@ -576,18 +576,18 @@
                 "to": {
                     "startLine": 32,
                     "startColumn": 4,
-                    "startOffset": 1500,
+                    "startOffset": 1506,
                     "endColumn": 53,
-                    "endOffset": 1549
+                    "endOffset": 1555
                 },
                 "from": {
                     "file": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 48,
                         "startColumn": 4,
-                        "startOffset": 1991,
+                        "startOffset": 1997,
                         "endColumn": 53,
-                        "endOffset": 2040
+                        "endOffset": 2046
                     }
                 }
             }

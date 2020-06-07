@@ -28,10 +28,11 @@
         android:minSdkVersion="11"
         android:targetSdkVersion="11" />
 
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /> <!-- 获取权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:allowBackup="true"
         android:icon="@drawable/app_notes"
         android:label="@string/app_name" >
         <provider
@@ -159,6 +160,11 @@
             android:label="Select Background Color or Pic"
             android:theme="@android:style/Theme.Holo.Light.Dialog"
             android:windowSoftInputMode="stateHidden" /> <!-- 隐藏键盘 -->
+        <activity
+            android:name="com.example.android.notepad.NoteExport"
+            android:label="@string/export_name"
+            android:theme="@android:style/Theme.Holo.Light.Dialog"
+            android:windowSoftInputMode="stateVisible" /> <!-- 显示软键盘 -->
     </application>
 
 </manifest>
