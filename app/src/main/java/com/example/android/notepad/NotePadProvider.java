@@ -161,6 +161,9 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
         sNotesProjectionMap.put(
                 NotePad.Notes.COLUMN_NAME_BACK_COLOR,
                 NotePad.Notes.COLUMN_NAME_BACK_COLOR);//增加背景颜色
+        sNotesProjectionMap.put(
+                NotePad.Notes.COLUMN_NAME_TYPE,
+                NotePad.Notes.COLUMN_NAME_TYPE);
 
         /*
          * Creates an initializes a projection map for handling Live Folders
@@ -203,7 +206,8 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
                    + NotePad.Notes.COLUMN_NAME_NOTE + " TEXT,"
                    + NotePad.Notes.COLUMN_NAME_CREATE_DATE + " INTEGER,"
                    + NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE + " INTEGER,"
-                   + NotePad.Notes.COLUMN_NAME_BACK_COLOR + " INTEGER" //颜色
+                   + NotePad.Notes.COLUMN_NAME_BACK_COLOR + " INTEGER," //颜色
+                   + NotePad.Notes.COLUMN_NAME_TYPE + " TEXT"//类型
                    + ");");
        }
 
@@ -555,6 +559,10 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
         if (values.containsKey(NotePad.Notes.COLUMN_NAME_BACK_COLOR) == false) {
             values.put(NotePad.Notes.COLUMN_NAME_BACK_COLOR, NotePad.Notes.DEFAULT_COLOR);
         }//设置背景颜色为默认白色
+        if(values.containsKey(NotePad.Notes.COLUMN_NAME_TYPE) == false)
+        {
+            values.put(NotePad.Notes.COLUMN_NAME_TYPE,"未分类");//插入笔记分类，设置默认类型为未分类
+        }
 
         // Opens the database object in "write" mode.
         SQLiteDatabase db = mOpenHelper.getWritableDatabase();

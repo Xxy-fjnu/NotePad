@@ -154,6 +154,8 @@ public final class NotePad {
 
         public static final String COLUMN_NAME_BACK_COLOR = "color";//背景颜色
 
+        public static final String COLUMN_NAME_TYPE = "type";//笔记类型
+
         public static final int DEFAULT_COLOR = 0; //白
 
         public static final int YELLOW_COLOR = 1; //黄

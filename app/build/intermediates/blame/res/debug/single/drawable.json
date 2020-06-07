@@ -1,82 +1,54 @@
 [
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_save.png",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_save.png"
+        "merged": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_save.png",
+        "source": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_save.png"
     },
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\live_folder_notes.png",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\live_folder_notes.png"
+        "merged": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_edit.png",
+        "source": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_edit.png"
     },
     {
-        "merged": "E:\\gitrepos\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_edit.png",
-        "source": "E:\\gitrepos\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_edit.png"
+        "merged": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_delete.png",
+        "source": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_delete.png"
     },
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_delete.png",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_delete.png"
+        "merged": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\live_folder_notes.png",
+        "source": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\drawable\\live_folder_notes.png"
     },
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic3.jpg",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\pic3.jpg"
+        "merged": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_compose.png",
+        "source": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_compose.png"
     },
     {
-        "merged": "E:\\gitrepos\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_revert.png",
-        "source": "E:\\gitrepos\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_revert.png"
+        "merged": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_revert.png",
+        "source": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_revert.png"
     },
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic4.jpg",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\pic4.jpg"
+        "merged": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic3.jpg",
+        "source": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\drawable\\pic3.jpg"
     },
     {
-        "merged": "E:\\gitrepos\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_save.png",
-        "source": "E:\\gitrepos\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_save.png"
+        "merged": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic5.jpg",
+        "source": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\drawable\\pic5.jpg"
     },
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_edit.png",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_edit.png"
+        "merged": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic1.jpg",
+        "source": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\drawable\\pic1.jpg"
     },
     {
-        "merged": "E:\\gitrepos\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\app_notes.png",
-        "source": "E:\\gitrepos\\NotePad\\app\\src\\main\\res\\drawable\\app_notes.png"
+        "merged": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic4.jpg",
+        "source": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\drawable\\pic4.jpg"
     },
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_compose.png",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_compose.png"
+        "merged": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic2.jpg",
+        "source": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\drawable\\pic2.jpg"
     },
     {
-        "merged": "E:\\gitrepos\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_compose.png",
-        "source": "E:\\gitrepos\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_compose.png"
+        "merged": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\app_notes.png",
+        "source": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\drawable\\app_notes.png"
     },
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic5.jpg",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\pic5.jpg"
-    },
-    {
-        "merged": "E:\\gitrepos\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_delete.png",
-        "source": "E:\\gitrepos\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_delete.png"
-    },
-    {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic2.jpg",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\pic2.jpg"
-    },
-    {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\app_notes.png",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\app_notes.png"
-    },
-    {
-        "merged": "E:\\gitrepos\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\live_folder_notes.png",
-        "source": "E:\\gitrepos\\NotePad\\app\\src\\main\\res\\drawable\\live_folder_notes.png"
-    },
-    {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_revert.png",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_revert.png"
-    },
-    {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_bgcolor.png",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_bgcolor.png"
-    },
-    {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic1.jpg",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\pic1.jpg"
+        "merged": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_bgcolor.png",
+        "source": "E:\\Android\\work\\pullNotePad\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_bgcolor.png"
     }
 ]

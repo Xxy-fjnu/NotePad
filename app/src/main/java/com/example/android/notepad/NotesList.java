@@ -26,18 +26,22 @@ import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 /**
  * Displays a list of notes. Will display notes from the {@link Uri}
@@ -61,6 +65,7 @@ public class NotesList extends ListActivity {
             NotePad.Notes._ID, // 0
             NotePad.Notes.COLUMN_NAME_TITLE, // 1
             NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE,//2修改的时间
+            NotePad.Notes.COLUMN_NAME_TYPE//类型
     };
 
     /**
@@ -128,7 +133,7 @@ public class NotesList extends ListActivity {
 
         // Creates the backing adapter for the ListView.
         SimpleCursorAdapter adapter
-                = new SimpleCursorAdapter(
+                = new MAdapter(
                 this,                             // The Context for the ListView
                 R.layout.noteslist_item,          // Points to the XML for a list item
                 cursor,                           // The cursor to get items from
@@ -474,6 +479,43 @@ public class NotesList extends ListActivity {
             // Sends out an Intent to start an Activity that can handle ACTION_EDIT. The
             // Intent's data is the note ID URI. The effect is to call NoteEdit.
             startActivity(new Intent(Intent.ACTION_EDIT, uri));
+        }
+    }
+    public class MAdapter extends SimpleCursorAdapter {//自定义的设配器用于显示不同背景颜色
+
+        private LayoutInflater miInflater;
+        private Cursor c;
+        private Context con;
+
+        public MAdapter(Context context, int layout, Cursor c, String[] from, int[] to) {
+            super(context, layout, c, from, to);
+            this.c = c;
+            this.con = context;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            View view = super.getView(position, convertView, parent);
+            TextView text1 = (TextView) view.findViewById(android.R.id.text1);
+            TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+            text1.setText(c.getString(c.getColumnIndex(NotePad.Notes.COLUMN_NAME_TITLE)));//从数据库中获取title在text1中显示出来
+            text2.setText(c.getString(c.getColumnIndex(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE)));//从数据库中获取modifytime在text2中显示出来
+            int typeIndex = c.getColumnIndex(NotePad.Notes.COLUMN_NAME_TYPE);
+            String type = c.getString(typeIndex);//获取数据库中type值
+            //根据类型不同设置颜色
+            if (type.equals("学习") || type.equals("工作")) {
+                view.setBackgroundColor(getResources().getColor(R.color.Pink));
+            } else if (type.equals("个人")) {
+                view.setBackgroundColor(getResources().getColor(R.color.Blue));
+            } else if (type.equals("旅游")) {
+                view.setBackgroundColor(getResources().getColor(R.color.Yellow));
+            } else if (type.equals("生活")) {
+                view.setBackgroundColor(getResources().getColor(R.color.Green));
+            } else if (type.equals("未分类"))
+                view.setBackgroundColor(0);
+            //Log.d("color",type);
+            return view;
         }
     }
 }

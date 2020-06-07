@@ -1,7 +1,4 @@
-#Sun Jun 07 11:22:21 CST 2020
-base.0=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_dd3b3a6a7612120600ac9edfbe5176ed36161116
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_eb1307fae6c6a7e0c9d109464bcd254c51bb0842\\classes.dex
-base.1=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_eb1307fae6c6a7e0c9d109464bcd254c51bb0842
-file.0=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_dd3b3a6a7612120600ac9edfbe5176ed36161116\\classes.dex
+#Sun Jun 07 21:38:29 CST 2020
+base.0=E\:\\Android\\work\\pullNotePad\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=E\:\\Android\\work\\pullNotePad\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

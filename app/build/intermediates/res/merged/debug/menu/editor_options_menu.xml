@@ -4,7 +4,7 @@
           android:icon="@drawable/ic_menu_save"
           android:alphabeticShortcut='s'
           android:title="@string/menu_save"
-          android:showAsAction="ifRoom|withText" />
+          android:showAsAction="always" />
     <item android:id="@+id/menu_revert"
           android:icon="@drawable/ic_menu_revert"
           android:title="@string/menu_revert" />
@@ -16,9 +16,4 @@
         android:title="@string/menu_bgcolor"
         android:icon="@drawable/ic_menu_bgcolor"
         android:showAsAction="always"/>
-<<<<<<< HEAD
-    <item android:id="@+id/menu_export"
-        android:title="@string/menu_export" />
-=======
->>>>>>> 5812341efaf0c1a7503e9bac4608098dfce69c6e
 </menu>
