@@ -485,7 +485,11 @@ public class NoteEditor extends Activity {
             case R.id.menu_revert:
                 cancelNote();
                 break;
+<<<<<<< HEAD
             case R.id.menu_color://修改背景
+=======
+            case R.id.menu_color://修改背景颜色
+>>>>>>> 5812341efaf0c1a7503e9bac4608098dfce69c6e
                 changeColor();
                 break;
         }
@@ -661,7 +665,11 @@ public class NoteEditor extends Activity {
         }
     }
 
+<<<<<<< HEAD
     private final void changeColor() {//改变背景
+=======
+    private final void changeColor() {//改变颜色
+>>>>>>> 5812341efaf0c1a7503e9bac4608098dfce69c6e
         Intent intent = new Intent(null,mUri);
         intent.setClass(NoteEditor.this,NoteColor.class);
         NoteEditor.this.startActivity(intent);
