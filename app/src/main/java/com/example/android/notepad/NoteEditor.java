@@ -488,6 +488,9 @@ public class NoteEditor extends Activity {
             case R.id.menu_color://修改背景
                 changeColor();
                 break;
+            case R.id.menu_export://导出笔记
+                export();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -664,6 +667,11 @@ public class NoteEditor extends Activity {
     private final void changeColor() {//改变背景
         Intent intent = new Intent(null,mUri);
         intent.setClass(NoteEditor.this,NoteColor.class);
+        NoteEditor.this.startActivity(intent);
+    }
+    private final void export() {//导出笔记
+       Intent intent = new Intent(null,mUri);
+       intent.setClass(NoteEditor.this,NoteExport.class);
         NoteEditor.this.startActivity(intent);
     }
 }

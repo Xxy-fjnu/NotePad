@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\app_notes.png",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable-hdpi\\app_notes.png"
-    },
-    {
         "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_menu_edit.png",
         "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable-hdpi\\ic_menu_edit.png"
+    },
+    {
+        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\app_notes.png",
+        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable-hdpi\\app_notes.png"
     },
     {
         "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_menu_delete.png",

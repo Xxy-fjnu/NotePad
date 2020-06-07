@@ -6,11 +6,11 @@
     <color name="White">#FFFFFF</color>
     <color name="Yellow">#FFFAE3</color>
     <string name="app_name">NotePad</string>
-    <string name="button_export">export</string>
     <string name="button_ok">OK</string>
+    <string name="button_return">return</string>
     <string name="error_message">Error loading note</string>
     <string name="error_title">Error</string>
-    <string name="export_name">export</string>
+    <string name="export_name">export title</string>
     <string name="hint">please enter the note title</string>
     <string name="live_folder_name">Notes</string>
     <string name="menu_add">New note</string>

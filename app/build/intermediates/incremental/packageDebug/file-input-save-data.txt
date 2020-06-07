@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Jun 07 11:22:21 CST 2020
+#Sun Jun 07 13:31:11 CST 2020
 25.file=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\menu\\list_context_menu.xml
 25.base=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_
 22.set=ANDROID_RESOURCE
@@ -12,7 +12,7 @@
 14.base=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_
 16.set=ANDROID_RESOURCE
 count=33
-6.file=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-hdpi-v4\\ic_menu_compose.png
+6.file=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\pic4.jpg
 6.base=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_
 26.file=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\ic_menu_bgcolor.png
 2.set=ANDROID_RESOURCE
@@ -30,7 +30,7 @@ count=33
 31.base=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_
 15.base=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_
 26.set=ANDROID_RESOURCE
-7.file=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\pic4.jpg
+7.file=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\note_editor.xml
 7.base=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_
 15.set=ANDROID_RESOURCE
 27.file=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-hdpi-v4\\ic_menu_save.png
@@ -47,12 +47,12 @@ count=33
 32.base=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_
 6.set=ANDROID_RESOURCE
 16.base=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_
-8.file=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\ic_menu_save.png
+8.file=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\noteslist_item.xml
 8.base=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_
 17.file=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-hdpi-v4\\ic_menu_delete.png
 25.set=ANDROID_RESOURCE
 17.base=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_
-10.file=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\noteslist_item.xml
+10.file=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_\\AndroidManifest.xml
 28.file=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\menu\\editor_options_menu.xml
 10.base=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_
 28.base=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_
@@ -64,7 +64,7 @@ count=33
 0.set=DEX
 19.set=ANDROID_RESOURCE
 30.set=ANDROID_RESOURCE
-9.file=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_\\AndroidManifest.xml
+9.file=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\ic_menu_save.png
 5.set=ANDROID_RESOURCE
 18.file=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\pic1.jpg
 9.base=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_
@@ -97,6 +97,6 @@ count=33
 17.set=ANDROID_RESOURCE
 13.file=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\pic2.jpg
 13.base=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_
-5.file=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\note_editor.xml
+5.file=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-hdpi-v4\\ic_menu_compose.png
 3.set=ANDROID_RESOURCE
 5.base=D\:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\resources-debug.ap_

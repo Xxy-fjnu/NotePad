@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="3dip"
+    android:paddingLeft="6dip"
+    android:paddingRight="6dip">
+
+    <EditText
+        android:id="@+id/export_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="2dp"
+        android:autoText="true"
+        android:capitalize="sentences"
+        android:ems="25"
+        android:maxLines="1"
+        android:scrollHorizontally="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:onClick="exit"
+            android:text="@string/button_return" />
+
+        <Button
+            android:id="@+id/export_ok"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:onClick="exportOk"
+            android:text="@string/button_ok" />
+
+    </LinearLayout>
+</LinearLayout>
+
