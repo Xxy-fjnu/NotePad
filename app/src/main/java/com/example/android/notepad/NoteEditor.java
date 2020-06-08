@@ -37,10 +37,15 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 
 /**
  * This Activity handles "editing" a note, where editing is responding to
@@ -65,7 +70,8 @@ public class NoteEditor extends Activity {
                     NotePad.Notes._ID,
                     NotePad.Notes.COLUMN_NAME_TITLE,
                     NotePad.Notes.COLUMN_NAME_NOTE,
-                    NotePad.Notes.COLUMN_NAME_BACK_COLOR//添加背景颜色
+                    NotePad.Notes.COLUMN_NAME_BACK_COLOR,//添加背景颜色
+                    NotePad.Notes.COLUMN_NAME_TYPE//添加笔记类型
             };
 
     // A label for the saved state of the activity
@@ -82,6 +88,10 @@ public class NoteEditor extends Activity {
     private Cursor mCursor;
     private EditText mText;
     private String mOriginalContent;
+    private Spinner spinner;//下拉框显示笔记的分类
+    private String type_selected;//选中的笔记分类
+    String[] ctype = new String[]{"学习", "旅游", "个人", "生活", "工作","未分类"};//笔记分类
+    String type;
 
     /**
      * Defines a custom EditText View that draws lines between each line of text that is displayed.
@@ -231,6 +241,36 @@ public class NoteEditor extends Activity {
 
         // Gets a handle to the EditText in the the layout.
         mText = (EditText) findViewById(R.id.note);
+
+        ArrayAdapter<String> adapter;
+        //创建一个数组适配器
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ctype);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);     //设置下拉列表框的下拉选项样式
+        spinner = (Spinner) findViewById(R.id.spinner);
+        spinner.setAdapter(adapter);
+        mCursor.moveToFirst();
+        int n = mCursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_TYPE);
+        type = mCursor.getString(n);//获得数据库中的type值
+        Log.d("type",type);
+        Arrays.sort(ctype);
+        int x=Arrays.binarySearch(ctype,type);
+        Log.d("xiabiao", String.valueOf(x));
+        spinner.setSelection(x);//设置下拉框的默认值为数据库中存储的类型
+
+      //  spinner.setSelection(Arrays.binarySearch(ctype,type),true);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                type_selected=ctype[i];
+                Log.d("type_selected",type_selected);
+                Log.d("datebase",type);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         /*
          * If this Activity had stopped previously, its state was written the ORIGINAL_CONTENT
@@ -485,7 +525,7 @@ public class NoteEditor extends Activity {
             case R.id.menu_revert:
                 cancelNote();
                 break;
-            case R.id.menu_color://修改背景
+            case R.id.menu_color://修改背景颜色
                 changeColor();
                 break;
             case R.id.menu_export://导出笔记
@@ -577,6 +617,8 @@ public class NoteEditor extends Activity {
         ContentValues values = new ContentValues();
         values.put(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, dateStr);
 
+        values.put(NotePad.Notes.COLUMN_NAME_TYPE,type_selected);//更新选中的类型
+
         // If the action is to insert a new note, this creates an initial title for it.
         if (mState == STATE_INSERT) {
 
@@ -664,7 +706,7 @@ public class NoteEditor extends Activity {
         }
     }
 
-    private final void changeColor() {//改变背景
+    private final void changeColor() {//改变颜色
         Intent intent = new Intent(null,mUri);
         intent.setClass(NoteEditor.this,NoteColor.class);
         NoteEditor.this.startActivity(intent);

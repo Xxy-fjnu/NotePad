@@ -71,6 +71,7 @@ public class MyBackupAgent extends Activity {
             MyBackupAgent.this.startActivity(intent);
         } catch (Exception e) {
             e.printStackTrace();
+            Toast.makeText(this, "并未备份", Toast.LENGTH_LONG).show();
             Log.d("myLog", "restore fail! 数据库文件名：" + dbFile.getName());
         }
     }
