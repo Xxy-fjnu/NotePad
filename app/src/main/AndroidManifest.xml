@@ -22,13 +22,16 @@
     package="com.example.android.notepad">
 
     <uses-sdk android:minSdkVersion="11" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/><!--获取权限-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /><!--获取权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:icon="@drawable/app_notes"
         android:allowBackup="true"
+        android:icon="@drawable/app_notes"
         android:label="@string/app_name">
+        <meta-data
+            android:name="com.google.android.backup.api_key"
+            android:value="AEdPqrEAAAAIRjhQZVT8gQdRE86-gE9Avg8hbpAnKPgkA8r1lQ" />
         <provider
             android:name="NotePadProvider"
             android:authorities="com.google.provider.NotePad"
@@ -136,10 +139,16 @@
             android:label="Select Background Color or Pic"
             android:theme="@android:style/Theme.Holo.Light.Dialog"
             android:windowSoftInputMode="stateHidden" /><!-- 隐藏键盘-->
-        <activity android:name=".NoteExport"
+        <activity
+            android:name=".NoteExport"
             android:label="@string/export_name"
             android:theme="@android:style/Theme.Holo.Light.Dialog"
-            android:windowSoftInputMode="stateVisible"/><!--显示软键盘-->
+            android:windowSoftInputMode="stateVisible" /><!--显示软键盘-->
+        <activity
+            android:name=".MyBackupAgent"
+            android:label="@string/backup_restore"
+            android:theme="@android:style/Theme.Holo.Light.Dialog" />
+
     </application>
 
 </manifest>

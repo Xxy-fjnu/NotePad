@@ -289,9 +289,13 @@ public class NotesList extends ListActivity {
                 intent.setClass(NotesList.this, NoteSearch.class);
                 NotesList.this.startActivity(intent);
                 return true;
+            case R.id.menu_backup:
+                backup();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+
 
     }
 
@@ -475,5 +479,10 @@ public class NotesList extends ListActivity {
             // Intent's data is the note ID URI. The effect is to call NoteEdit.
             startActivity(new Intent(Intent.ACTION_EDIT, uri));
         }
+    }
+    private final void backup() {//备份笔记
+        Intent intent = new Intent();
+        intent.setClass(NotesList.this, MyBackupAgent.class);
+        NotesList.this.startActivity(intent);
     }
 }
