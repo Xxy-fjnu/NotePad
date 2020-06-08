@@ -15,11 +15,6 @@ import java.io.IOException;
 import java.nio.channels.FileChannel;
 
 public class MyBackupAgent extends Activity {
-    private static final String[] PROJECTION = new String[]{
-            NotePad.Notes._ID, // 0
-            NotePad.Notes.COLUMN_NAME_TITLE, // 1
-            NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, // 2 修改时间
-    };
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.backup_restore);
