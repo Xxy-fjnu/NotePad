@@ -1,19 +1,38 @@
 package com.example.android.notepad;
 
 
+import android.Manifest;
 import android.app.ListActivity;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Rect;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
+
+import com.google.gson.Gson;
+import com.iflytek.cloud.RecognizerResult;
+import com.iflytek.cloud.SpeechConstant;
+import com.iflytek.cloud.SpeechError;
+import com.iflytek.cloud.SpeechUtility;
+import com.iflytek.cloud.ui.RecognizerDialog;
+import com.iflytek.cloud.ui.RecognizerDialogListener;
+
+import java.util.ArrayList;
 
 public class NoteSearch extends ListActivity implements SearchView.OnQueryTextListener {
     private static final String[] PROJECTION = new String[]{
@@ -21,6 +40,9 @@ public class NoteSearch extends ListActivity implements SearchView.OnQueryTextLi
             NotePad.Notes.COLUMN_NAME_TITLE, // 1
             NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, // 2 修改时间
     };
+
+    SearchView searchview;
+    ImageButton imageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +52,22 @@ public class NoteSearch extends ListActivity implements SearchView.OnQueryTextLi
         if (intent.getData() == null) {
             intent.setData(NotePad.Notes.CONTENT_URI);
         }
-        SearchView searchview = (SearchView) findViewById(R.id.search_view);
+        SpeechUtility.createUtility(this, SpeechConstant.APPID+"=5edf7c34");//初始化语音识别的sdk
+        searchview = (SearchView) findViewById(R.id.search_view);
         searchview.setSubmitButtonEnabled(true);//显示提交按钮
         searchview.setOnQueryTextListener(NoteSearch.this);//为searchview增加监听器
+        imageButton= (ImageButton) findViewById(R.id.voice_button);
+        final VoiceSearch voiceSearch=new VoiceSearch();
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              startSpeechClick(view);
+            }
+        });
+
+
     }
+
 
     @Override
     public boolean onQueryTextSubmit(String query) {//提交方法
@@ -102,4 +136,55 @@ public class NoteSearch extends ListActivity implements SearchView.OnQueryTextLi
             startActivity(new Intent(Intent.ACTION_EDIT, uri));
         }
     }
+    public void startSpeechClick(final View view){//语音识别函数
+        RecognizerDialog mDialog = new RecognizerDialog(this, null);
+        //2.设置accent、language等参数
+        final SearchView searchview= (SearchView) view.findViewById(R.id.search_view);
+        mDialog.setParameter(SpeechConstant.LANGUAGE, "zh_cn");
+        mDialog.setParameter(SpeechConstant.ACCENT, "mandarin");
+        mDialog.show();
+        mDialog.setListener(new RecognizerDialogListener() {
+            @Override
+            public void onResult(RecognizerResult recognizerResult, boolean isLast) {
+                if (!isLast) {
+                    //解析语音
+                    String result = parseVoice(recognizerResult.getResultString());
+                    searchview.setQuery(result,false);
+                }
+            }
+
+            @Override
+            public void onError(SpeechError speechError) {
+
+            }
+        });
+        //4.显示dialog，接收语音输入
+
+    }
+
+    public String parseVoice(String resultString) {//语音解析
+        Gson gson = new Gson();
+        VoiceSearch.Voice voiceBean = gson.fromJson(resultString, VoiceSearch.Voice.class);
+
+        StringBuffer sb = new StringBuffer();
+        ArrayList<VoiceSearch.Voice.WSBean> ws = voiceBean.ws;
+        for (VoiceSearch.Voice.WSBean wsBean : ws) {
+            String word = wsBean.cw.get(0).w;
+            sb.append(word);
+        }
+        return sb.toString();
+    }
+    public class Voice {//语音封装
+
+        public ArrayList<VoiceSearch.Voice.WSBean> ws;
+
+        public class WSBean {
+            public ArrayList<VoiceSearch.Voice.CWBean> cw;
+        }
+
+        public class CWBean {
+            public String w;
+        }
+    }
+
 }

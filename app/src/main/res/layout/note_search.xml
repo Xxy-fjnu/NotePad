@@ -1,26 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
     android:layout_width="match_parent"
 
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
 
     android:orientation="vertical">
-
-
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <SearchView
 
         android:id="@+id/search_view"
 
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
 
         android:layout_height="wrap_content"
 
         android:iconifiedByDefault="false"
 
         android:queryHint="@string/hint" />
-
+        <ImageButton
+            android:paddingTop="1dp"
+            android:id="@+id/voice_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="#FFFFFF"
+            android:src="@drawable/ic_mic_black_24dp"/>
+    </LinearLayout>
 
     <ListView
 
@@ -30,3 +39,5 @@
 
         android:layout_height="wrap_content" />
 </LinearLayout>
+
+

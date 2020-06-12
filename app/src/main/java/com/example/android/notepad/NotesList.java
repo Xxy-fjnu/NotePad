@@ -290,7 +290,7 @@ public class NotesList extends ListActivity {
                 startActivity(new Intent(Intent.ACTION_PASTE, getIntent().getData()));
                 return true;
             case R.id.menu_search:
-                Intent intent = new Intent();
+               Intent intent = new Intent();
                 intent.setClass(NotesList.this, NoteSearch.class);
                 NotesList.this.startActivity(intent);
                 return true;
@@ -468,6 +468,7 @@ public class NotesList extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
 
         // Constructs a new URI from the incoming URI and the row ID
+        Log.d("beidian", String.valueOf(position));
         Uri uri = ContentUris.withAppendedId(getIntent().getData(), id);
         // Gets the action from the incoming Intent
         String action = getIntent().getAction();
@@ -482,6 +483,7 @@ public class NotesList extends ListActivity {
 
             // Sends out an Intent to start an Activity that can handle ACTION_EDIT. The
             // Intent's data is the note ID URI. The effect is to call NoteEdit.
+            Log.d("beidian", String.valueOf(position));
             startActivity(new Intent(Intent.ACTION_EDIT, uri));
         }
     }
@@ -513,14 +515,16 @@ public class NotesList extends ListActivity {
             int typeIndex = c.getColumnIndex(NotePad.Notes.COLUMN_NAME_TYPE);
             String type = c.getString(typeIndex);//获取数据库中type值
             //根据类型不同设置颜色
-            if (type.equals("学习") || type.equals("工作")) {
-                view.setBackgroundColor(getResources().getColor(R.color.Pink));
+            if (type.equals("学习")  ){
+                view.setBackgroundColor(getResources().getColor(R.color.Red_list));
             } else if (type.equals("个人")) {
-                view.setBackgroundColor(getResources().getColor(R.color.Blue));
+                view.setBackgroundColor(getResources().getColor(R.color.Blue_list));
             } else if (type.equals("旅游")) {
-                view.setBackgroundColor(getResources().getColor(R.color.Yellow));
-            } else if (type.equals("生活")) {
-                view.setBackgroundColor(getResources().getColor(R.color.Green));
+                view.setBackgroundColor(getResources().getColor(R.color.Yellow_list));
+            } else if( type.equals("工作")) {
+                view.setBackgroundColor(getResources().getColor(R.color.Purple_list));
+            }else if (type.equals("生活")) {
+                view.setBackgroundColor(getResources().getColor(R.color.Green_list));
             } else if (type.equals("未分类"))
                 view.setBackgroundColor(0);
             //Log.d("color",type);

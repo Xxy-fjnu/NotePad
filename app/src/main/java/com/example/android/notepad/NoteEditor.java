@@ -42,6 +42,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import java.text.SimpleDateFormat;
@@ -347,40 +348,41 @@ public class NoteEditor extends Activity {
             setTitle(getText(R.string.error_title));
             mText.setText(getText(R.string.error_message));
         }
+        LinearLayout layout=(LinearLayout)findViewById(R.id.editLayout);
         int x = mCursor.getInt(mCursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_BACK_COLOR));//读出数据库中的背景颜色
         switch (x) {
             case NotePad.Notes.DEFAULT_COLOR:
-                mText.setBackgroundColor(Color.rgb(255, 255, 255));//白色
+                layout.setBackgroundColor(Color.rgb(255, 255, 255));//白色
                 break;
             case NotePad.Notes.YELLOW_COLOR:
-                mText.setBackgroundColor(Color.rgb(255, 250, 227));//黄色
+                layout.setBackgroundColor(Color.rgb(255, 250, 227));//黄色
                 break;
             case NotePad.Notes.BLUE_COLOR:
-                mText.setBackgroundColor(Color.rgb(186, 215, 247));//蓝色
+                layout.setBackgroundColor(Color.rgb(186, 215, 247));//蓝色
                 break;
             case NotePad.Notes.GREEN_COLOR:
-                mText.setBackgroundColor(Color.rgb(236, 250, 235));//绿色
+                layout.setBackgroundColor(Color.rgb(236, 250, 235));//绿色
                 break;
             case NotePad.Notes.PINK_COLOR:
-                mText.setBackgroundColor(Color.rgb(255, 238, 240));//粉色
+                layout.setBackgroundColor(Color.rgb(255, 238, 240));//粉色
                 break;
             case NotePad.Notes.PIC1:
-                mText.setBackgroundResource(R.drawable.pic1);//图片1
+                layout.setBackgroundResource(R.drawable.pic1);//图片1
                 break;
             case NotePad.Notes.PIC2:
-                mText.setBackgroundResource(R.drawable.pic2);//图片2
+                layout.setBackgroundResource(R.drawable.pic2);//图片2
                 break;
             case NotePad.Notes.PIC3:
-                mText.setBackgroundResource(R.drawable.pic3);//图片3
+                layout.setBackgroundResource(R.drawable.pic3);//图片3
                 break;
             case NotePad.Notes.PIC4:
-                mText.setBackgroundResource(R.drawable.pic4);//图片4
+                layout.setBackgroundResource(R.drawable.pic4);//图片4
                 break;
             case NotePad.Notes.PIC5:
-                mText.setBackgroundResource(R.drawable.pic5);//图片2
+                layout.setBackgroundResource(R.drawable.pic5);//图片2
                 break;
             default:
-                mText.setBackgroundColor(Color.rgb(255, 255, 255));//白色
+                layout.setBackgroundColor(Color.rgb(255, 255, 255));//白色
                 break;
         }
     }

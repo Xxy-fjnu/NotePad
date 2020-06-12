@@ -5,4 +5,10 @@
     <color name="Blue">#BAD7F7</color>
     <color name="Green">#ECFAEB</color>
     <color name="Pink">#FFEEF0</color>
+    <color name="Red_list">#FDCAC9</color>
+    <color name="Yellow_list">#f9fbba</color>
+    <color name="Green_list">#CEFFCE</color>
+    <color name="Blue_list">#d4edf4</color>
+    <color name="Purple_list">#EDE6F8</color>
+
 </resources>

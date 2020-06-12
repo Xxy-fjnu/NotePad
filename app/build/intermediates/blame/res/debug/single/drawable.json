@@ -1,54 +1,142 @@
 [
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\live_folder_notes.png",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\live_folder_notes.png"
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_light.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_dialog_material_background_light.xml"
     },
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_save.png",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_save.png"
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_delete.png",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_delete.png"
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
     },
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic3.jpg",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\pic3.jpg"
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
     },
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic4.jpg",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\pic4.jpg"
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_edit.png",
+        "source": "E:\\Android\\work\\newNotePad\\app\\src\\main\\res\\drawable\\ic_menu_edit.png"
     },
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_edit.png",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_edit.png"
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_btn_colored_material.xml"
     },
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_compose.png",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_compose.png"
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_bgcolor.png",
+        "source": "E:\\Android\\work\\newNotePad\\app\\src\\main\\res\\drawable\\ic_menu_bgcolor.png"
     },
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic5.jpg",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\pic5.jpg"
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic2.jpg",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\pic2.jpg"
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_text_cursor_material.xml"
     },
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\app_notes.png",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\app_notes.png"
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_revert.png",
+        "source": "E:\\Android\\work\\newNotePad\\app\\src\\main\\res\\drawable\\ic_menu_revert.png"
     },
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_revert.png",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_revert.png"
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
     },
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic1.jpg",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\pic1.jpg"
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\app_notes.png",
+        "source": "E:\\Android\\work\\newNotePad\\app\\src\\main\\res\\drawable\\app_notes.png"
     },
     {
-        "merged": "D:\\AntroidStudio\\work\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_bgcolor.png",
-        "source": "D:\\AntroidStudio\\work\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_bgcolor.png"
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic1.jpg",
+        "source": "E:\\Android\\work\\newNotePad\\app\\src\\main\\res\\drawable\\pic1.jpg"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_full_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_ratingbar_full_material.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic4.jpg",
+        "source": "E:\\Android\\work\\newNotePad\\app\\src\\main\\res\\drawable\\pic4.jpg"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\live_folder_notes.png",
+        "source": "E:\\Android\\work\\newNotePad\\app\\src\\main\\res\\drawable\\live_folder_notes.png"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic3.jpg",
+        "source": "E:\\Android\\work\\newNotePad\\app\\src\\main\\res\\drawable\\pic3.jpg"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_dark.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_dialog_material_background_dark.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic5.jpg",
+        "source": "E:\\Android\\work\\newNotePad\\app\\src\\main\\res\\drawable\\pic5.jpg"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_save.png",
+        "source": "E:\\Android\\work\\newNotePad\\app\\src\\main\\res\\drawable\\ic_menu_save.png"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_compose.png",
+        "source": "E:\\Android\\work\\newNotePad\\app\\src\\main\\res\\drawable\\ic_menu_compose.png"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pic2.jpg",
+        "source": "E:\\Android\\work\\newNotePad\\app\\src\\main\\res\\drawable\\pic2.jpg"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_delete.png",
+        "source": "E:\\Android\\work\\newNotePad\\app\\src\\main\\res\\drawable\\ic_menu_delete.png"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "E:\\Android\\work\\newNotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\455ff438eecc5c7cf1945ed6c35e6263d583d7fc\\output\\res\\drawable\\abc_list_selector_holo_light.xml"
     }
 ]
