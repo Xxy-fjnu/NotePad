@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.content.Intent.ShortcutIconResource;
 import android.os.Bundle;
 import android.provider.LiveFolders;
+import android.support.v7.app.ActionBar;
 
 /**
  * This Activity creates a live folder Intent and
@@ -34,7 +35,7 @@ import android.provider.LiveFolders;
  * The intent filter for this Activity is set to ACTION_CREATE_LIVE_FOLDER, which
  * HOME sends in response to a long press and selection of Live Folder.
  */
-public class NotesLiveFolder extends Activity {
+public class NotesLiveFolder extends BaseActivity {
 
     /**
      * All of the work is done in onCreate(). The Activity doesn't actually display a UI.
@@ -43,6 +44,13 @@ public class NotesLiveFolder extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ActionBar supportActionBar = getSupportActionBar();
+        if (supportActionBar != null) {
+            supportActionBar.setDisplayHomeAsUpEnabled(true);
+            supportActionBar.setHomeAsUpIndicator(R.drawable.live_folder_notes);
+            supportActionBar.setTitle(R.string.live_folder_name);
+        }
 
         /*
          * Gets the incoming Intent and its action. If the incoming Intent was

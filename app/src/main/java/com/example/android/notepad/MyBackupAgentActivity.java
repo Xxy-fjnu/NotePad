@@ -14,7 +14,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 
-public class MyBackupAgent extends Activity {
+public class MyBackupAgentActivity extends Activity {
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.backup_restore);
@@ -62,8 +63,8 @@ public class MyBackupAgent extends Activity {
             fileCopy(backup, dbFile);//备份文件拷贝至数据库文件
             //Toast.makeText(this, "已还原", Toast.LENGTH_LONG).show();
             Intent intent = new Intent();
-            intent.setClass(MyBackupAgent.this, NotesList.class);
-            MyBackupAgent.this.startActivity(intent);
+            intent.setClass(MyBackupAgentActivity.this, NotesListActivity.class);
+            MyBackupAgentActivity.this.startActivity(intent);
         } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(this, "并未备份", Toast.LENGTH_LONG).show();

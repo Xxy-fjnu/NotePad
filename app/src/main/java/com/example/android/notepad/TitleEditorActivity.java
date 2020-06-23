@@ -21,6 +21,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
@@ -34,7 +35,7 @@ import android.widget.EditText;
  * application should use the {@link android.content.AsyncQueryHandler}
  * or {@link android.os.AsyncTask} object to perform operations asynchronously on a separate thread.
  */
-public class TitleEditor extends Activity{
+public class TitleEditorActivity extends BaseActivity {
 
     /**
      * This is a special intent action that means "edit the title of a note".
@@ -69,6 +70,13 @@ public class TitleEditor extends Activity{
 
         // Set the View for this Activity object's UI.
         setContentView(R.layout.title_editor);
+
+        ActionBar supportActionBar = getSupportActionBar();
+        if (supportActionBar != null) {
+            supportActionBar.setDisplayHomeAsUpEnabled(true);
+            supportActionBar.setHomeAsUpIndicator(R.drawable.ic_menu_edit);
+            supportActionBar.setTitle(R.string.title_edit_title);
+        }
 
         // Get the Intent that activated this Activity, and from it get the URI of the note whose
         // title we need to edit.

@@ -16,7 +16,6 @@
 
 package com.example.android.notepad;
 
-import android.app.ListActivity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.ComponentName;
@@ -26,6 +25,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -40,17 +41,8 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
-/**
- * Displays a list of notes. Will display notes from the {@link Uri}
- * provided in the incoming Intent if there is one, otherwise it defaults to displaying the
- * contents of the {@link NotePadProvider}.
- * <p>
- * NOTE: Notice that the provider operations in this Activity are taking place on the UI thread.
- * This is not a good practice. It is only done here to make the code more readable. A real
- * application should use the {@link android.content.AsyncQueryHandler} or
- * {@link android.os.AsyncTask} object to perform operations asynchronously on a separate thread.
- */
-public class NotesList extends ListActivity {
+
+public class NotesListActivity extends BaseActivity implements AdapterView.OnItemClickListener {
 
     // For logging and debugging
     private static final String TAG = "NotesList";
@@ -70,6 +62,9 @@ public class NotesList extends ListActivity {
      */
     private static final int COLUMN_INDEX_TITLE = 1;
 
+    private ListView listView;
+    private SimpleCursorAdapter adapter;
+
     /**
      * onCreate is called when Android starts this Activity from scratch.
      */
@@ -79,6 +74,17 @@ public class NotesList extends ListActivity {
 
         // The user does not need to hold down the key to use menu shortcuts.
         setDefaultKeyMode(DEFAULT_KEYS_SHORTCUT);
+
+        // 添加布局
+        setContentView(R.layout.activity_note_list);
+        listView = (ListView) findViewById(R.id.lv);
+
+        ActionBar supportActionBar = getSupportActionBar();
+        if (supportActionBar != null) {
+            supportActionBar.setDisplayHomeAsUpEnabled(true);
+            supportActionBar.setHomeAsUpIndicator(R.drawable.app_notes);
+            supportActionBar.setTitle(R.string.app_name);
+        }
 
         /* If no data is given in the Intent that started this Activity, then this Activity
          * was started when the intent filter matched a MAIN action. We should use the default
@@ -98,7 +104,10 @@ public class NotesList extends ListActivity {
          * to be this Activity. The effect is that context menus are enabled for items in the
          * ListView, and the context menu is handled by a method in NotesList.
          */
-        getListView().setOnCreateContextMenuListener(this);
+        if (listView != null) {
+            listView.setOnCreateContextMenuListener(this);
+            listView.setOnItemClickListener(this);
+        }
 
         /* Performs a managed query. The Activity handles closing and requerying the cursor
          * when needed.
@@ -129,8 +138,7 @@ public class NotesList extends ListActivity {
         int[] viewIDs = {android.R.id.text1, android.R.id.text2};
 
         // Creates the backing adapter for the ListView.
-        SimpleCursorAdapter adapter
-                = new MAdapter(
+        adapter = new MAdapter(
                 this,                             // The Context for the ListView
                 R.layout.noteslist_item,          // Points to the XML for a list item
                 cursor,                           // The cursor to get items from
@@ -139,7 +147,8 @@ public class NotesList extends ListActivity {
         );
 
         // Sets the ListView's adapter to be the cursor adapter that was just created.
-        setListAdapter(adapter);
+//        setListAdapter(adapter);
+        listView.setAdapter(adapter);
     }
 
     /**
@@ -169,7 +178,7 @@ public class NotesList extends ListActivity {
         Intent intent = new Intent(null, getIntent().getData());
         intent.addCategory(Intent.CATEGORY_ALTERNATIVE);
         menu.addIntentOptions(Menu.CATEGORY_ALTERNATIVE, 0, 0,
-                new ComponentName(this, NotesList.class), null, intent, 0, null);
+                new ComponentName(this, NotesListActivity.class), null, intent, 0, null);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -194,7 +203,7 @@ public class NotesList extends ListActivity {
         }
 
         // Gets the number of notes currently being displayed.
-        final boolean haveItems = getListAdapter().getCount() > 0;
+        final boolean haveItems = adapter.getCount() > 0;
 
         // If there are any notes in the list (which implies that one of
         // them is selected), then we need to generate the actions that
@@ -204,7 +213,7 @@ public class NotesList extends ListActivity {
         if (haveItems) {
 
             // This is the selected item.
-            Uri uri = ContentUris.withAppendedId(getIntent().getData(), getSelectedItemId());
+            Uri uri = ContentUris.withAppendedId(getIntent().getData(), listView.getSelectedItemId());
 
             // Creates an array of Intents with one element. This will be used to send an Intent
             // based on the selected menu item.
@@ -288,8 +297,8 @@ public class NotesList extends ListActivity {
                 return true;
             case R.id.menu_search:
                 Intent intent = new Intent();
-                intent.setClass(NotesList.this, NoteSearch.class);
-                NotesList.this.startActivity(intent);
+                intent.setClass(NotesListActivity.this, NoteSearchActivity.class);
+                NotesListActivity.this.startActivity(intent);
                 return true;
             case R.id.menu_backup:
                 backup();
@@ -297,8 +306,8 @@ public class NotesList extends ListActivity {
             case R.id.menu_setting:
                 // 设置
                 Intent intent1 = new Intent();
-                intent1.setClass(NotesList.this, NoteSetting.class);
-                NotesList.this.startActivity(intent1);
+                intent1.setClass(NotesListActivity.this, NoteSettingActivity.class);
+                NotesListActivity.this.startActivity(intent1);
                 return true;
 
             default:
@@ -343,7 +352,7 @@ public class NotesList extends ListActivity {
          * the adapter associated all of the data for a note with its list item. As a result,
          * getItem() returns that data as a Cursor.
          */
-        Cursor cursor = (Cursor) getListAdapter().getItem(info.position);
+        Cursor cursor = (Cursor) adapter.getItem(info.position);
 
         // If the cursor is empty, then for some reason the adapter can't get the data from the
         // provider, so returns null to the caller.
@@ -369,7 +378,7 @@ public class NotesList extends ListActivity {
         intent.addCategory(Intent.CATEGORY_ALTERNATIVE);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         menu.addIntentOptions(Menu.CATEGORY_ALTERNATIVE, 0, 0,
-                new ComponentName(this, NotesList.class), null, intent, 0, null);
+                new ComponentName(this, NotesListActivity.class), null, intent, 0, null);
     }
 
     /**
@@ -456,21 +465,49 @@ public class NotesList extends ListActivity {
         }
     }
 
-    /**
-     * This method is called when the user clicks a note in the displayed list.
-     * <p>
-     * This method handles incoming actions of either PICK (get data from the provider) or
-     * GET_CONTENT (get or create data). If the incoming action is EDIT, this method sends a
-     * new Intent to start NoteEditor.
-     *
-     * @param l        The ListView that contains the clicked item
-     * @param v        The View of the individual item
-     * @param position The position of v in the displayed list
-     * @param id       The row ID of the clicked item
-     */
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
+    //    /**
+//     * This method is called when the user clicks a note in the displayed list.
+//     * <p>
+//     * This method handles incoming actions of either PICK (get data from the provider) or
+//     * GET_CONTENT (get or create data). If the incoming action is EDIT, this method sends a
+//     * new Intent to start NoteEditor.
+//     *
+//     * @param l        The ListView that contains the clicked item
+//     * @param v        The View of the individual item
+//     * @param position The position of v in the displayed list
+//     * @param id       The row ID of the clicked item
+//     */
+//    @Override
+//    protected void onListItemClick(ListView l, View v, int position, long id) {
+//
+//        // Constructs a new URI from the incoming URI and the row ID
+//        Log.d("beidian", String.valueOf(position));
+//        Uri uri = ContentUris.withAppendedId(getIntent().getData(), id);
+//        // Gets the action from the incoming Intent
+//        String action = getIntent().getAction();
+//
+//        // Handles requests for note data
+//        if (Intent.ACTION_PICK.equals(action) || Intent.ACTION_GET_CONTENT.equals(action)) {
+//
+//            // Sets the result to return to the component that called this Activity. The
+//            // result contains the new URI
+//            setResult(RESULT_OK, new Intent().setData(uri));
+//        } else {
+//
+//            // Sends out an Intent to start an Activity that can handle ACTION_EDIT. The
+//            // Intent's data is the note ID URI. The effect is to call NoteEdit.
+//            Log.d("beidian", String.valueOf(position));
+//            startActivity(new Intent(Intent.ACTION_EDIT, uri));
+//        }
+//    }
+    private final void backup() {//备份笔记
+        Intent intent = new Intent();
+        intent.setClass(NotesListActivity.this, MyBackupAgentActivity.class);
+        NotesListActivity.this.startActivity(intent);
+    }
 
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
         // Constructs a new URI from the incoming URI and the row ID
         Log.d("beidian", String.valueOf(position));
         Uri uri = ContentUris.withAppendedId(getIntent().getData(), id);
@@ -490,12 +527,6 @@ public class NotesList extends ListActivity {
             Log.d("beidian", String.valueOf(position));
             startActivity(new Intent(Intent.ACTION_EDIT, uri));
         }
-    }
-
-    private final void backup() {//备份笔记
-        Intent intent = new Intent();
-        intent.setClass(NotesList.this, MyBackupAgent.class);
-        NotesList.this.startActivity(intent);
     }
 
     public class MAdapter extends SimpleCursorAdapter {//自定义的设配器用于显示不同背景颜色
@@ -521,6 +552,10 @@ public class NotesList extends ListActivity {
             int typeIndex = c.getColumnIndex(NotePad.Notes.COLUMN_NAME_TYPE);
             String type = c.getString(typeIndex);//获取数据库中type值
             //根据类型不同设置颜色
+            if (TextUtils.isEmpty(type)) {
+                type = "";
+            }
+            // type == null,不能直接eq
             if (type.equals("学习")) {
                 view.setBackgroundColor(getResources().getColor(R.color.Red_list));
             } else if (type.equals("个人")) {
@@ -531,8 +566,9 @@ public class NotesList extends ListActivity {
                 view.setBackgroundColor(getResources().getColor(R.color.Purple_list));
             } else if (type.equals("生活")) {
                 view.setBackgroundColor(getResources().getColor(R.color.Green_list));
-            } else if (type.equals("未分类"))
+            } else if (type.equals("未分类")) {
                 view.setBackgroundColor(0);
+            }
             //Log.d("color",type);
             return view;
         }

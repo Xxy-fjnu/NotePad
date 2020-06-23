@@ -1,0 +1,4 @@
+#Tue Jun 23 14:38:19 CST 2020
+base.0=D\:\\Project\\JianZhi\\NotePad2\\NotePad\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\out
+path.0=classes.dex
+renamed.0=classes.dex

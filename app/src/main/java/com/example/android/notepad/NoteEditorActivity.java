@@ -16,7 +16,6 @@
 
 package com.example.android.notepad;
 
-import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.ComponentName;
@@ -32,6 +31,8 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Menu;
@@ -58,7 +59,8 @@ import java.util.Arrays;
  * application should use the {@link android.content.AsyncQueryHandler}
  * or {@link android.os.AsyncTask} object to perform operations asynchronously on a separate thread.
  */
-public class NoteEditor extends Activity {
+public class NoteEditorActivity extends BaseActivity {
+
     // For logging and debugging purposes
     private static final String TAG = "NoteEditor";
 
@@ -90,13 +92,13 @@ public class NoteEditor extends Activity {
     private String mOriginalContent;
     private Spinner spinner;//下拉框显示笔记的分类
     private String type_selected;//选中的笔记分类
-    String[] ctype = new String[]{"学习", "旅游", "个人", "生活", "工作","未分类"};//笔记分类
+    String[] ctype = new String[]{"学习", "旅游", "个人", "生活", "工作", "未分类"};//笔记分类
     String type;
 
     /**
      * Defines a custom EditText View that draws lines between each line of text that is displayed.
      */
-    public static class LinedEditText extends EditText {
+    public static class LinedEditText extends AppCompatEditText {
         private Rect mRect;
         private Paint mPaint;
 
@@ -154,6 +156,15 @@ public class NoteEditor extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ActionBar supportActionBar = getSupportActionBar();
+        if (supportActionBar != null) {
+            supportActionBar.setDisplayHomeAsUpEnabled(true);
+            supportActionBar.setHomeAsUpIndicator(R.drawable.app_notes);
+            supportActionBar.setTitle(R.string.resolve_edit);
+        }
+
+
         /*
          * Creates an Intent to use when the Activity object's result is sent back to the
          * caller.
@@ -251,19 +262,19 @@ public class NoteEditor extends Activity {
         mCursor.moveToFirst();
         int n = mCursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_TYPE);
         type = mCursor.getString(n);//获得数据库中的type值
-        Log.d("type",type);
+        Log.d("type", type);
         Arrays.sort(ctype);
-        int x=Arrays.binarySearch(ctype,type);
+        int x = Arrays.binarySearch(ctype, type);
         Log.d("xiabiao", String.valueOf(x));
         spinner.setSelection(x);//设置下拉框的默认值为数据库中存储的类型
 
-      //  spinner.setSelection(Arrays.binarySearch(ctype,type),true);
+        //  spinner.setSelection(Arrays.binarySearch(ctype,type),true);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                type_selected=ctype[i];
-                Log.d("type_selected",type_selected);
-                Log.d("datebase",type);
+                type_selected = ctype[i];
+                Log.d("type_selected", type_selected);
+                Log.d("datebase", type);
             }
 
             @Override
@@ -339,18 +350,20 @@ public class NoteEditor extends Activity {
                 mOriginalContent = note;
             }
 
-        /*
-         * Something is wrong. The Cursor should always contain data. Report an error in the
-         * note.
-         */
+            /*
+             * Something is wrong. The Cursor should always contain data. Report an error in the
+             * note.
+             */
         } else {
             setTitle(getText(R.string.error_title));
             mText.setText(getText(R.string.error_message));
         }
-        LinearLayout layout=(LinearLayout)findViewById(R.id.editLayout);
+        // TODO 这里写了布局的背景色，影响到了夜间模式, 白色背景变不了黑色，
+        LinearLayout layout = (LinearLayout) findViewById(R.id.editLayout);
         int x = mCursor.getInt(mCursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_BACK_COLOR));//读出数据库中的背景颜色
         switch (x) {
             case NotePad.Notes.DEFAULT_COLOR:
+                //
                 layout.setBackgroundColor(Color.rgb(255, 255, 255));//白色
                 break;
             case NotePad.Notes.YELLOW_COLOR:
@@ -481,7 +494,7 @@ public class NoteEditor extends Activity {
             Intent intent = new Intent(null, mUri);
             intent.addCategory(Intent.CATEGORY_ALTERNATIVE);
             menu.addIntentOptions(Menu.CATEGORY_ALTERNATIVE, 0, 0,
-                    new ComponentName(this, NoteEditor.class), null, intent, 0, null);
+                    new ComponentName(this, NoteEditorActivity.class), null, intent, 0, null);
         }
 
         return super.onCreateOptionsMenu(menu);
@@ -618,7 +631,7 @@ public class NoteEditor extends Activity {
         ContentValues values = new ContentValues();
         values.put(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, dateStr);
 
-        values.put(NotePad.Notes.COLUMN_NAME_TYPE,type_selected);//更新选中的类型
+        values.put(NotePad.Notes.COLUMN_NAME_TYPE, type_selected);//更新选中的类型
 
         // If the action is to insert a new note, this creates an initial title for it.
         if (mState == STATE_INSERT) {
@@ -708,13 +721,14 @@ public class NoteEditor extends Activity {
     }
 
     private final void changeColor() {//改变颜色
-        Intent intent = new Intent(null,mUri);
-        intent.setClass(NoteEditor.this, NoteColorActivity.class);
-        NoteEditor.this.startActivity(intent);
+        Intent intent = new Intent(null, mUri);
+        intent.setClass(NoteEditorActivity.this, NoteColorActivity.class);
+        NoteEditorActivity.this.startActivity(intent);
     }
+
     private final void export() {//导出笔记
-       Intent intent = new Intent(null,mUri);
-       intent.setClass(NoteEditor.this,NoteExport.class);
-        NoteEditor.this.startActivity(intent);
+        Intent intent = new Intent(null, mUri);
+        intent.setClass(NoteEditorActivity.this, NoteExportActivity.class);
+        NoteEditorActivity.this.startActivity(intent);
     }
 }

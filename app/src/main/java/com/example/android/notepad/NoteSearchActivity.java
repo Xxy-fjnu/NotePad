@@ -26,7 +26,7 @@ import com.iflytek.cloud.ui.RecognizerDialogListener;
 
 import java.util.ArrayList;
 
-public class NoteSearch extends BaseActivity implements SearchView.OnQueryTextListener {
+public class NoteSearchActivity extends BaseActivity implements SearchView.OnQueryTextListener {
 
     private static final String[] PROJECTION = new String[]{
             NotePad.Notes._ID, // 0
@@ -61,7 +61,7 @@ public class NoteSearch extends BaseActivity implements SearchView.OnQueryTextLi
         SpeechUtility.createUtility(this, SpeechConstant.APPID + "=5edf7c34");//初始化语音识别的sdk
         searchview = (SearchView) findViewById(R.id.search_view);
         searchview.setSubmitButtonEnabled(true);//显示提交按钮
-        searchview.setOnQueryTextListener(NoteSearch.this);//为searchview增加监听器
+        searchview.setOnQueryTextListener(NoteSearchActivity.this);//为searchview增加监听器
         imageButton = (ImageButton) findViewById(R.id.voice_button);
         final VoiceSearch voiceSearch = new VoiceSearch();
         imageButton.setOnClickListener(new View.OnClickListener() {

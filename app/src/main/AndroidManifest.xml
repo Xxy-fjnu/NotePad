@@ -21,14 +21,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.notepad">
 
-    <uses-sdk android:minSdkVersion="11" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /><!--获取权限-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/app_notes"
-        android:label="@string/app_name">
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.backup.api_key"
             android:value="AEdPqrEAAAAIRjhQZVT8gQdRE86-gE9Avg8hbpAnKPgkA8r1lQ" />
@@ -39,34 +39,40 @@
             <grant-uri-permission android:pathPattern=".*" />
         </provider>
 
+<!--        <activity-->
+<!--            android:name=".NotesList"-->
+<!--            android:label="@string/title_notes_list"-->
+<!--            android:theme="@android:style/Theme.Holo.Light">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
+<!--                <action android:name="android.intent.action.EDIT" />-->
+<!--                <action android:name="android.intent.action.PICK" />-->
+
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <data android:mimeType="vnd.android.cursor.dir/vnd.google.note" />-->
+<!--            </intent-filter>-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.GET_CONTENT" />-->
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <data android:mimeType="vnd.android.cursor.item/vnd.google.note" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+
         <activity
-            android:name="NotesList"
-            android:label="@string/title_notes_list"
-            android:theme="@android:style/Theme.Holo.Light">
+            android:name=".NotesListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.EDIT" />
-                <action android:name="android.intent.action.PICK" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.dir/vnd.google.note" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.GET_CONTENT" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.google.note" />
-            </intent-filter>
         </activity>
 
         <activity
-            android:name="NoteEditor"
+            android:name=".NoteEditorActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="sensor"
-            android:theme="@android:style/Theme.Holo.Light"
             android:windowSoftInputMode="adjustPan">
             <!-- This filter says that we can view or edit the data of
                  a single note -->
@@ -94,10 +100,7 @@
         </activity>
 
         <activity
-            android:name="TitleEditor"
-            android:icon="@drawable/ic_menu_edit"
-            android:label="@string/title_edit_title"
-            android:theme="@android:style/Theme.Holo.Dialog"
+            android:name=".TitleEditorActivity"
             android:windowSoftInputMode="stateVisible">
             <!-- This activity implements an alternative action that can be
                  performed on notes: editing their title.  It can be used as
@@ -122,33 +125,39 @@
         </activity>
 
         <activity
-            android:name="NotesLiveFolder"
-            android:icon="@drawable/live_folder_notes"
-            android:label="@string/live_folder_name">
+            android:name=".NotesLiveFolder">
             <intent-filter>
                 <action android:name="android.intent.action.CREATE_LIVE_FOLDER" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+
         <activity
-            android:name="NoteSearch"
-            android:label="@string/title_notes_search"
-            android:theme="@android:style/Theme.Holo.Light">
+            android:name=".NoteSearchActivity">
         </activity>
+
+        <!--        以dialog形式弹出，不需要继承baseactivity-->
         <activity
-            android:name=".NoteColor"
+            android:name=".NoteColorActivity"
             android:label="Select Background Color or Pic"
             android:theme="@android:style/Theme.Holo.Light.Dialog"
             android:windowSoftInputMode="stateHidden" /><!-- 隐藏键盘-->
+
+        <!--        以dialog形式弹出，不需要继承baseactivity-->
         <activity
-            android:name=".NoteExport"
+            android:name=".NoteExportActivity"
             android:label="@string/export_name"
             android:theme="@android:style/Theme.Holo.Light.Dialog"
             android:windowSoftInputMode="stateVisible" /><!--显示软键盘-->
+
+<!--        以dialog形式弹出，不需要继承baseactivity-->
         <activity
-            android:name=".MyBackupAgent"
-            android:label="@string/backup_restore"
-            android:theme="@android:style/Theme.Holo.Light.Dialog" />
+            android:name=".MyBackupAgentActivity"
+            android:theme="@android:style/Theme.Holo.Dialog" />
+
+        <activity
+            android:name=".NoteSettingActivity" />
 
     </application>
 

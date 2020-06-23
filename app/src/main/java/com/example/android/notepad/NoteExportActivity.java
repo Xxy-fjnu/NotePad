@@ -14,7 +14,8 @@ import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
-public class NoteExport extends Activity {
+public class NoteExportActivity extends Activity {
+
     private static final String[] PROJECTION = new String[]{//首先读取数据库中存放的笔记数据
             NotePad.Notes._ID, // 0
             NotePad.Notes.COLUMN_NAME_TITLE, // 1
@@ -35,6 +36,7 @@ public class NoteExport extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.export_text);
+
         mUri = getIntent().getData();
         mCursor = managedQuery(
                 mUri,        // The URI for the note that is to be retrieved.

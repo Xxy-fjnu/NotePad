@@ -1,0 +1,332 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!--
+3 Copyright (C) 2007 The Android Open Source Project
+4
+5     Licensed under the Apache License, Version 2.0 (the "License");
+6     you may not use this file except in compliance with the License.
+7     You may obtain a copy of the License at
+8
+9          http://www.apache.org/licenses/LICENSE-2.0
+10
+11     Unless required by applicable law or agreed to in writing, software
+12     distributed under the License is distributed on an "AS IS" BASIS,
+13     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+14     See the License for the specific language governing permissions and
+15     limitations under the License.
+16-->
+17<!--
+18 Declare the contents of this Android application.  The namespace
+19     attribute brings in the Android platform namespace, and the package
+20     supplies a unique name for the application.  When writing your
+21     own application, the package name must be changed from "com.example.*"
+22     to come from a domain that you own or have control over.
+23-->
+24<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+25    package="com.example.android.notepad"
+26    android:versionCode="1"
+27    android:versionName="1.0" >
+28
+29    <uses-sdk
+30        android:minSdkVersion="14"
+30-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml
+31        android:targetSdkVersion="23" />
+31-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml
+32
+33    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /> <!-- 获取权限 -->
+33-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:24:5-84
+33-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:24:22-81
+34    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+34-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:25:5-81
+34-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:25:22-78
+35    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+35-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:166:5-71
+35-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:166:22-68
+36    <uses-permission android:name="android.permission.INTERNET" />
+36-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:167:5-67
+36-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:167:22-64
+37    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+37-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:168:5-79
+37-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:168:22-76
+38    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+38-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:169:5-76
+38-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:169:22-73
+39    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+39-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:170:5-79
+39-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:170:22-76
+40    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+40-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:171:5-75
+40-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:171:22-72
+41    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+41-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:172:5-79
+41-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:172:22-76
+42    <uses-permission android:name="android.permission.READ_CONTACTS" />
+42-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:173:5-72
+42-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:173:22-69
+43    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+43-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:25:5-81
+43-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:25:22-78
+44    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+44-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:175:5-73
+44-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:175:22-70
+45    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+45-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:176:5-80
+45-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:176:22-77
+46    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+46-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:172:5-79
+46-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:172:22-76
+47    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+47-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:178:5-81
+47-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:178:22-78
+48
+49    <application
+49-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:27:5-164:19
+50        android:name="com.example.android.notepad.NoteApplication"
+50-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:28:9-40
+51        android:allowBackup="true"
+51-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:29:9-35
+52        android:debuggable="true"
+53        android:icon="@drawable/app_notes"
+53-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:30:9-43
+54        android:label="@string/app_name"
+54-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:31:9-41
+55        android:testOnly="true"
+56        android:theme="@style/AppTheme" >
+56-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:32:9-40
+57        <meta-data
+57-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:33:9-35:82
+58            android:name="com.google.android.backup.api_key"
+58-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:34:13-61
+59            android:value="AEdPqrEAAAAIRjhQZVT8gQdRE86-gE9Avg8hbpAnKPgkA8r1lQ" />
+59-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:35:13-79
+60
+61        <provider
+61-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:36:9-41:20
+62            android:name="com.example.android.notepad.NotePadProvider"
+62-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:37:13-43
+63            android:authorities="com.google.provider.NotePad"
+63-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:38:13-62
+64            android:exported="false" >
+64-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:39:13-37
+65            <grant-uri-permission android:pathPattern=".*" />
+65-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:40:13-62
+65-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:40:35-59
+66        </provider>
+67
+68        <!-- <activity -->
+69        <!-- android:name=".NotesList" -->
+70        <!-- android:label="@string/title_notes_list" -->
+71        <!-- android:theme="@android:style/Theme.Holo.Light"> -->
+72        <!-- <intent-filter> -->
+73        <!-- <action android:name="android.intent.action.MAIN" /> -->
+74        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+75        <!-- </intent-filter> -->
+76        <!-- <intent-filter> -->
+77        <!-- <action android:name="android.intent.action.VIEW" /> -->
+78        <!-- <action android:name="android.intent.action.EDIT" /> -->
+79        <!-- <action android:name="android.intent.action.PICK" /> -->
+80
+81
+82        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+83        <!-- <data android:mimeType="vnd.android.cursor.dir/vnd.google.note" /> -->
+84        <!-- </intent-filter> -->
+85        <!-- <intent-filter> -->
+86        <!-- <action android:name="android.intent.action.GET_CONTENT" /> -->
+87        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+88        <!-- <data android:mimeType="vnd.android.cursor.item/vnd.google.note" /> -->
+89        <!-- </intent-filter> -->
+90        <!-- </activity> -->
+91
+92        <activity android:name="com.example.android.notepad.NotesListActivity" >
+92-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:66:9-72:20
+92-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:67:13-46
+93            <intent-filter>
+93-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:68:13-71:29
+94                <action android:name="android.intent.action.MAIN" />
+94-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:69:17-69
+94-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:69:25-66
+95
+96                <category android:name="android.intent.category.LAUNCHER" />
+96-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:70:17-77
+96-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:70:27-74
+97            </intent-filter>
+98        </activity>
+99        <activity
+99-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:74:9-103:20
+100            android:name="com.example.android.notepad.NoteEditor"
+100-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:75:13-38
+101            android:configChanges="keyboardHidden|orientation"
+101-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:76:13-63
+102            android:screenOrientation="sensor"
+102-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:77:13-47
+103            android:theme="@android:style/Theme.Holo.Light"
+103-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:78:13-60
+104            android:windowSoftInputMode="adjustPan" >
+104-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:79:13-52
+105
+106            <!--
+107                 This filter says that we can view or edit the data of
+108                 a single note
+109            -->
+110            <intent-filter android:label="@string/resolve_edit" >
+110-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:82:13-89:29
+110-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:82:28-64
+111                <action android:name="android.intent.action.VIEW" />
+111-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:83:17-69
+111-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:83:25-66
+112                <action android:name="android.intent.action.EDIT" />
+112-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:84:17-69
+112-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:84:25-66
+113                <action android:name="com.android.notepad.action.EDIT_NOTE" />
+113-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:85:17-79
+113-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:85:25-76
+114
+115                <category android:name="android.intent.category.DEFAULT" />
+115-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:87:17-76
+115-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:87:27-73
+116
+117                <data android:mimeType="vnd.android.cursor.item/vnd.google.note" />
+117-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:88:17-84
+117-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:88:23-81
+118            </intent-filter>
+119
+120            <!--
+121                 This filter says that we can create a new note inside
+122                 of a directory of notes.  The INSERT action creates an
+123                 empty note; the PASTE action initializes a new note from
+124                 the current contents of the clipboard.
+125            -->
+126            <intent-filter>
+126-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:95:13-101:29
+127                <action android:name="android.intent.action.INSERT" />
+127-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:96:17-71
+127-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:96:25-68
+128                <action android:name="android.intent.action.PASTE" />
+128-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:97:17-70
+128-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:97:25-67
+129
+130                <category android:name="android.intent.category.DEFAULT" />
+130-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:87:17-76
+130-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:87:27-73
+131
+132                <data android:mimeType="vnd.android.cursor.dir/vnd.google.note" />
+132-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:88:17-84
+132-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:88:23-81
+133            </intent-filter>
+134        </activity>
+135        <activity
+135-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:105:9-131:20
+136            android:name="com.example.android.notepad.TitleEditor"
+136-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:106:13-39
+137            android:icon="@drawable/ic_menu_edit"
+137-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:107:13-50
+138            android:label="@string/title_edit_title"
+138-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:108:13-53
+139            android:theme="@android:style/Theme.Holo.Dialog"
+139-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:109:13-61
+140            android:windowSoftInputMode="stateVisible" >
+140-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:110:13-55
+141
+142            <!--
+143                 This activity implements an alternative action that can be
+144                 performed on notes: editing their title.  It can be used as
+145                 a default operation if the user invokes this action, and is
+146                 available as an alternative action for any note data.
+147            -->
+148            <intent-filter android:label="@string/resolve_title" >
+148-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:115:13-130:29
+148-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:115:28-65
+149
+150                <!--
+151                     This is the action we perform.  It is a custom action we
+152                     define for our application, not a generic VIEW or EDIT
+153                     action since we are not a general note viewer/editor.
+154                -->
+155                <action android:name="com.android.notepad.action.EDIT_TITLE" />
+155-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:119:17-80
+155-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:119:25-77
+156                <!-- DEFAULT: execute if being directly invoked. -->
+157                <category android:name="android.intent.category.DEFAULT" />
+157-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:87:17-76
+157-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:87:27-73
+158                <!--
+159                     ALTERNATIVE: show as an alternative action when the user is
+160                     working with this type of data.
+161                -->
+162                <category android:name="android.intent.category.ALTERNATIVE" />
+162-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:124:17-80
+162-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:124:27-77
+163                <!--
+164                     SELECTED_ALTERNATIVE: show as an alternative action the user
+165                     can perform when selecting this type of data.
+166                -->
+167                <category android:name="android.intent.category.SELECTED_ALTERNATIVE" />
+167-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:127:17-89
+167-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:127:27-86
+168                <!-- This is the data type we operate on. -->
+169                <data android:mimeType="vnd.android.cursor.item/vnd.google.note" />
+169-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:88:17-84
+169-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:88:23-81
+170            </intent-filter>
+171        </activity>
+172        <activity
+172-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:133:9-141:20
+173            android:name="com.example.android.notepad.NotesLiveFolder"
+173-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:134:13-43
+174            android:icon="@drawable/live_folder_notes"
+174-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:135:13-55
+175            android:label="@string/live_folder_name" >
+175-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:136:13-53
+176            <intent-filter>
+176-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:137:13-140:29
+177                <action android:name="android.intent.action.CREATE_LIVE_FOLDER" />
+177-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:138:17-83
+177-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:138:25-80
+178
+179                <category android:name="android.intent.category.DEFAULT" />
+179-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:87:17-76
+179-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:87:27-73
+180            </intent-filter>
+181        </activity>
+182        <activity
+182-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:142:9-146:20
+183            android:name="com.example.android.notepad.NoteSearch"
+183-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:143:13-38
+184            android:label="@string/title_notes_search"
+184-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:144:13-55
+185            android:theme="@android:style/Theme.Holo.Light" >
+185-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:145:13-60
+186        </activity>
+187        <activity
+187-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:147:9-151:57
+188            android:name="com.example.android.notepad.NoteColor"
+188-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:148:13-38
+189            android:label="Select Background Color or Pic"
+189-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:149:13-59
+190            android:theme="@android:style/Theme.Holo.Light.Dialog"
+190-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:150:13-67
+191            android:windowSoftInputMode="stateHidden" /> <!-- 隐藏键盘 -->
+191-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:151:13-54
+192        <activity
+192-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:152:9-156:58
+193            android:name="com.example.android.notepad.NoteExport"
+193-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:153:13-39
+194            android:label="@string/export_name"
+194-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:154:13-48
+195            android:theme="@android:style/Theme.Holo.Light.Dialog"
+195-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:155:13-67
+196            android:windowSoftInputMode="stateVisible" /> <!-- 显示软键盘 -->
+196-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:156:13-55
+197        <activity
+197-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:157:9-160:64
+198            android:name="com.example.android.notepad.MyBackupAgent"
+198-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:158:13-42
+199            android:label="@string/backup_restore"
+199-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:159:13-51
+200            android:theme="@android:style/Theme.Holo.Dialog" />
+200-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:160:13-61
+201        <activity android:name="com.example.android.notepad.NoteSetting" />
+201-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:161:9-162:43
+201-->D:\Project\JianZhi\NotePad2\NotePad\app\src\main\AndroidManifest.xml:162:13-40
+202    </application>
+203
+204</manifest>

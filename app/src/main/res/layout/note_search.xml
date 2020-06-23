@@ -2,42 +2,38 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-
     android:layout_height="wrap_content"
-
     android:orientation="vertical">
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <SearchView
-
-        android:id="@+id/search_view"
-
-        android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        android:iconifiedByDefault="false"
-
-        android:queryHint="@string/hint" />
-        <ImageButton
-            android:paddingTop="1dp"
-            android:id="@+id/voice_button"
-            android:layout_width="wrap_content"
+        <SearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:iconifiedByDefault="false"
+            android:queryHint="@string/hint" />
+
+        <ImageButton
+            android:id="@+id/voice_button"
+            android:layout_width="51dp"
+            android:layout_height="43dp"
             android:layout_gravity="center_vertical"
-            android:background="#FFFFFF"
-            android:src="@drawable/ic_mic_black_24dp"/>
+            android:padding="20dp"
+            android:src="@drawable/ic_mic_black_24dp" />
+
     </LinearLayout>
 
     <ListView
-
-        android:id="@android:id/list"
-
+        android:id="@+id/lv"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip" />
 
-        android:layout_height="wrap_content" />
 </LinearLayout>
 
 

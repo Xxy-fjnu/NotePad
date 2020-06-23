@@ -16,27 +16,24 @@
 
 package com.example.android.notepad;
 
-import com.example.android.notepad.NotePad;
-
 import android.app.ListActivity;
-import android.content.ClipboardManager;
 import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.ComponentName;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -274,29 +271,36 @@ public class NotesList extends ListActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_add:
-          /*
-           * Launches a new Activity using an Intent. The intent filter for the Activity
-           * has to have action ACTION_INSERT. No category is set, so DEFAULT is assumed.
-           * In effect, this starts the NoteEditor Activity in NotePad.
-           */
+                /*
+                 * Launches a new Activity using an Intent. The intent filter for the Activity
+                 * has to have action ACTION_INSERT. No category is set, so DEFAULT is assumed.
+                 * In effect, this starts the NoteEditor Activity in NotePad.
+                 */
                 startActivity(new Intent(Intent.ACTION_INSERT, getIntent().getData()));
                 return true;
             case R.id.menu_paste:
-          /*
-           * Launches a new Activity using an Intent. The intent filter for the Activity
-           * has to have action ACTION_PASTE. No category is set, so DEFAULT is assumed.
-           * In effect, this starts the NoteEditor Activity in NotePad.
-           */
+                /*
+                 * Launches a new Activity using an Intent. The intent filter for the Activity
+                 * has to have action ACTION_PASTE. No category is set, so DEFAULT is assumed.
+                 * In effect, this starts the NoteEditor Activity in NotePad.
+                 */
                 startActivity(new Intent(Intent.ACTION_PASTE, getIntent().getData()));
                 return true;
             case R.id.menu_search:
-               Intent intent = new Intent();
-                intent.setClass(NotesList.this, NoteSearch.class);
+                Intent intent = new Intent();
+                intent.setClass(NotesList.this, NoteSearchActivity.class);
                 NotesList.this.startActivity(intent);
                 return true;
             case R.id.menu_backup:
                 backup();
                 return true;
+            case R.id.menu_setting:
+                // 设置
+                Intent intent1 = new Intent();
+                intent1.setClass(NotesList.this, NoteSettingActivity.class);
+                NotesList.this.startActivity(intent1);
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -487,11 +491,13 @@ public class NotesList extends ListActivity {
             startActivity(new Intent(Intent.ACTION_EDIT, uri));
         }
     }
+
     private final void backup() {//备份笔记
         Intent intent = new Intent();
-        intent.setClass(NotesList.this, MyBackupAgent.class);
+        intent.setClass(NotesList.this, MyBackupAgentActivity.class);
         NotesList.this.startActivity(intent);
     }
+
     public class MAdapter extends SimpleCursorAdapter {//自定义的设配器用于显示不同背景颜色
 
         private LayoutInflater miInflater;
@@ -515,15 +521,15 @@ public class NotesList extends ListActivity {
             int typeIndex = c.getColumnIndex(NotePad.Notes.COLUMN_NAME_TYPE);
             String type = c.getString(typeIndex);//获取数据库中type值
             //根据类型不同设置颜色
-            if (type.equals("学习")  ){
+            if (type.equals("学习")) {
                 view.setBackgroundColor(getResources().getColor(R.color.Red_list));
             } else if (type.equals("个人")) {
                 view.setBackgroundColor(getResources().getColor(R.color.Blue_list));
             } else if (type.equals("旅游")) {
                 view.setBackgroundColor(getResources().getColor(R.color.Yellow_list));
-            } else if( type.equals("工作")) {
+            } else if (type.equals("工作")) {
                 view.setBackgroundColor(getResources().getColor(R.color.Purple_list));
-            }else if (type.equals("生活")) {
+            } else if (type.equals("生活")) {
                 view.setBackgroundColor(getResources().getColor(R.color.Green_list));
             } else if (type.equals("未分类"))
                 view.setBackgroundColor(0);

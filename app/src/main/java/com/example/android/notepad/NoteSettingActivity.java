@@ -10,7 +10,7 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 
 
-public class NoteSetting extends BaseActivity {
+public class NoteSettingActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class NoteSetting extends BaseActivity {
 //                    recreate();
 
                     // 重启
-                    Intent intent = new Intent(NoteSetting.this, NoteSetting.class);
+                    Intent intent = new Intent(NoteSettingActivity.this, NoteSettingActivity.class);
                     startActivity(intent);
                     finish();
                 }
@@ -55,7 +55,7 @@ public class NoteSetting extends BaseActivity {
     public void onBackPressed() {
 //        super.onBackPressed();
         // 重啟回到首頁，否則已經打開的Activity不生效
-        Intent intent = new Intent(NoteSetting.this, NotesListActivity.class);
+        Intent intent = new Intent(NoteSettingActivity.this, NotesListActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();

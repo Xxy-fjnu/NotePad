@@ -33,6 +33,7 @@
     <string name="menu_bgcolor">bgcolor</string>
     <string name="menu_export">export</string>
     <string name="menu_backup">Back up or Restore</string>
+    <string name="menu_setting">Settings</string>
 
     <string name="button_ok">OK</string>
     <string name="text_title">Title:</string>
@@ -52,6 +53,9 @@
     <string name="nothing_to_save">There is nothing to save</string>
     <string name="hint">please enter the note title</string>
     <string name="title_notes_search">Search</string>
+    <string name="note_setting">Settings</string>
+
+
 
 
 </resources>
