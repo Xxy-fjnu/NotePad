@@ -1,25 +1,17 @@
 package com.example.android.notepad;
 
 
-import android.Manifest;
-import android.app.ListActivity;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.graphics.Rect;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.util.Log;
+import android.support.v7.app.ActionBar;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
@@ -34,7 +26,8 @@ import com.iflytek.cloud.ui.RecognizerDialogListener;
 
 import java.util.ArrayList;
 
-public class NoteSearch extends ListActivity implements SearchView.OnQueryTextListener {
+public class NoteSearch extends BaseActivity implements SearchView.OnQueryTextListener {
+
     private static final String[] PROJECTION = new String[]{
             NotePad.Notes._ID, // 0
             NotePad.Notes.COLUMN_NAME_TITLE, // 1
@@ -44,41 +37,51 @@ public class NoteSearch extends ListActivity implements SearchView.OnQueryTextLi
     SearchView searchview;
     ImageButton imageButton;
 
+    private ListView listView;
+    private SimpleCursorAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.note_search);
+
+        ActionBar supportActionBar = getSupportActionBar();
+        if (supportActionBar != null) {
+            supportActionBar.setDisplayHomeAsUpEnabled(true);
+            supportActionBar.setHomeAsUpIndicator(R.drawable.app_notes);
+            supportActionBar.setTitle(R.string.title_notes_search);
+        }
+
+        listView = (ListView) findViewById(R.id.lv);
+
         Intent intent = getIntent();
         if (intent.getData() == null) {
             intent.setData(NotePad.Notes.CONTENT_URI);
         }
-        SpeechUtility.createUtility(this, SpeechConstant.APPID+"=5edf7c34");//初始化语音识别的sdk
+        SpeechUtility.createUtility(this, SpeechConstant.APPID + "=5edf7c34");//初始化语音识别的sdk
         searchview = (SearchView) findViewById(R.id.search_view);
         searchview.setSubmitButtonEnabled(true);//显示提交按钮
         searchview.setOnQueryTextListener(NoteSearch.this);//为searchview增加监听器
-        imageButton= (ImageButton) findViewById(R.id.voice_button);
-        final VoiceSearch voiceSearch=new VoiceSearch();
+        imageButton = (ImageButton) findViewById(R.id.voice_button);
+        final VoiceSearch voiceSearch = new VoiceSearch();
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              startSpeechClick(view);
+                startSpeechClick(view);
             }
         });
-
-
     }
 
 
     @Override
     public boolean onQueryTextSubmit(String query) {//提交方法
-        if(getListAdapter().getCount()==0){
+        if (adapter.getCount() == 0) {
             Toast.makeText(this, "no found", Toast.LENGTH_SHORT).show();//若无查询结果则提示无结果
-        }
-        else{
-            Toast.makeText(this, getListAdapter().getCount()+" "+"found", Toast.LENGTH_SHORT).show();//提示找到几条数据
+        } else {
+            Toast.makeText(this, adapter.getCount() + " " + "found", Toast.LENGTH_SHORT).show();//提示找到几条数据
         }
         SearchView searchview = (SearchView) findViewById(R.id.search_view);
-        if (searchview!= null) {
+        if (searchview != null) {
             // 得到输入管理对象
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             if (imm != null) {
@@ -103,15 +106,15 @@ public class NoteSearch extends ListActivity implements SearchView.OnQueryTextLi
         );
         String[] dataColumns = {NotePad.Notes.COLUMN_NAME_TITLE, NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE};
         int[] viewIDs = {android.R.id.text1, android.R.id.text2};
-        SimpleCursorAdapter adapter
-                = new SimpleCursorAdapter(
+        adapter = new SimpleCursorAdapter(
                 this,                             // The Context for the ListView
                 R.layout.noteslist_item,          // Points to the XML for a list item
                 cursor,                           // The cursor to get items from
                 dataColumns,
                 viewIDs
         );
-        setListAdapter(adapter);
+//        setListAdapter(adapter);
+        listView.setAdapter(adapter);
         return true;
     }
 
@@ -136,10 +139,11 @@ public class NoteSearch extends ListActivity implements SearchView.OnQueryTextLi
             startActivity(new Intent(Intent.ACTION_EDIT, uri));
         }
     }
-    public void startSpeechClick(final View view){//语音识别函数
+
+    public void startSpeechClick(final View view) {//语音识别函数
         RecognizerDialog mDialog = new RecognizerDialog(this, null);
         //2.设置accent、language等参数
-        final SearchView searchview= (SearchView) view.findViewById(R.id.search_view);
+        final SearchView searchview = (SearchView) view.findViewById(R.id.search_view);
         mDialog.setParameter(SpeechConstant.LANGUAGE, "zh_cn");
         mDialog.setParameter(SpeechConstant.ACCENT, "mandarin");
         mDialog.show();
@@ -149,7 +153,7 @@ public class NoteSearch extends ListActivity implements SearchView.OnQueryTextLi
                 if (!isLast) {
                     //解析语音
                     String result = parseVoice(recognizerResult.getResultString());
-                    searchview.setQuery(result,false);
+                    searchview.setQuery(result, false);
                 }
             }
 
@@ -174,6 +178,7 @@ public class NoteSearch extends ListActivity implements SearchView.OnQueryTextLi
         }
         return sb.toString();
     }
+
     public class Voice {//语音封装
 
         public ArrayList<VoiceSearch.Voice.WSBean> ws;

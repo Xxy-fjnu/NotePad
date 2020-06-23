@@ -38,7 +38,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -710,7 +709,7 @@ public class NoteEditor extends Activity {
 
     private final void changeColor() {//改变颜色
         Intent intent = new Intent(null,mUri);
-        intent.setClass(NoteEditor.this,NoteColor.class);
+        intent.setClass(NoteEditor.this, NoteColorActivity.class);
         NoteEditor.this.startActivity(intent);
     }
     private final void export() {//导出笔记
